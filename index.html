@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Instalação e manutenção de ar-condicionado e soluções digitais para pequenos negócios em Porto Alegre e região.">
+<title>Evandro C – Soluções Técnicas e Digitais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0d1f3c;--blue:#1a4dcc;--sky:#3a7bd5;--ice:#dbeafe;--white:#fff;--off:#f0f4fb;--text:#1e2d47;--muted:#5a708a;--wa:#25d366;--wa-dk:#128c4e;--radius:16px;--shadow:0 8px 40px rgba(13,31,60,.12)}
+html{scroll-behavior:smooth}body{font-family:"DM Sans",sans-serif;font-size:16px;color:var(--text);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}.tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--ice);padding:5px 14px;border-radius:100px;margin-bottom:16px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(13,31,60,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.07)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Syne",sans-serif;font-weight:700;font-size:17px;color:var(--white);line-height:1.2}.logo span{display:block;font-size:10px;font-weight:400;color:rgba(255,255,255,.5);letter-spacing:.06em;margin-top:1px}
+.logo-link{display:flex;align-items:center;text-decoration:none}.logo-img{display:block;width:auto;object-fit:contain}.logo-invert{filter:brightness(0) invert(1)}
+.header-wa{display:flex;align-items:center;gap:8px;background:var(--wa);color:#fff;text-decoration:none;padding:9px 18px;border-radius:100px;font-size:13px;font-weight:500;transition:background .2s,transform .15s;white-space:nowrap}
+.header-wa:hover{background:var(--wa-dk);transform:translateY(-1px)}
+#hero{position:relative;min-height:100dvh;display:flex;align-items:center;background:var(--navy);overflow:hidden;padding-top:80px}
+#hero::before{content:"";position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(58,123,213,.28) 0%,transparent 70%);pointer-events:none}
+#hero::after{content:"";position:absolute;bottom:-80px;left:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(26,77,204,.22) 0%,transparent 70%);pointer-events:none}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+.hero-content{position:relative;z-index:2;padding:60px 0}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:6px 16px 6px 8px;margin-bottom:28px;color:rgba(255,255,255,.8);font-size:12px;letter-spacing:.04em}
+.hero-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--wa);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.4)}}
+h1{font-family:"Syne",sans-serif;font-size:clamp(32px,6vw,58px);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:20px;letter-spacing:-.02em}
+h1 em{font-style:normal;color:#7fb3f5}
+.hero-sub{font-size:clamp(15px,2.5vw,18px);color:rgba(255,255,255,.65);max-width:560px;line-height:1.7;margin-bottom:40px;font-weight:300}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;background:var(--wa);color:#fff;text-decoration:none;padding:16px 32px;border-radius:100px;font-size:16px;font-weight:500;transition:background .2s,transform .18s,box-shadow .2s;box-shadow:0 6px 24px rgba(37,211,102,.3)}
+.btn-wa:hover{background:var(--wa-dk);transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,.4)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.8);text-decoration:none;padding:16px 28px;border-radius:100px;font-size:15px;font-weight:400;transition:border-color .2s,color .2s,transform .18s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.55);color:#fff;transform:translateY(-2px)}
+.hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:48px}
+.chip{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:6px 14px;color:rgba(255,255,255,.7);font-size:12px}
+.chip svg{color:#7fb3f5}
+#services{padding:96px 0;background:var(--off)}
+.section-header{text-align:center;margin-bottom:56px}
+h2{font-family:"Syne",sans-serif;font-size:clamp(26px,4vw,42px);font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1.15;margin-bottom:12px}
+.section-sub{color:var(--muted);font-size:16px;max-width:480px;margin:0 auto;line-height:1.7;font-weight:300}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:var(--white);border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--sky));transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(13,31,60,.15)}
+.card:hover::before{transform:scaleX(1)}
+.card-icon{width:52px;height:52px;border-radius:14px;background:var(--ice);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--blue);transition:background .25s}
+.card:hover .card-icon{background:var(--blue);color:var(--white)}
+.card h3{font-family:"Syne",sans-serif;font-size:17px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.card p{color:var(--muted);font-size:14px;line-height:1.7;font-weight:300}
+#diferenciais{padding:96px 0;background:var(--navy);position:relative;overflow:hidden}
+#diferenciais::before{content:"";position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(58,123,213,.15) 0%,transparent 65%);pointer-events:none}
+#diferenciais .section-header h2{color:var(--white)}
+#diferenciais .section-header .tag{background:rgba(255,255,255,.1);color:#7fb3f5}
+.diffs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.diff-item{display:flex;align-items:flex-start;gap:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:24px 22px;transition:background .25s,border-color .25s,transform .25s}
+.diff-item:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);transform:translateY(-4px)}
+.diff-check{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(37,211,102,.15);border:1px solid rgba(37,211,102,.3);display:flex;align-items:center;justify-content:center;color:var(--wa)}
+.diff-item p{color:rgba(255,255,255,.8);font-size:15px;line-height:1.5;padding-top:8px}
+#galeria{padding:96px 0;background:var(--white)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery-item{aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--ice)}
+.gallery-wide{grid-column:span 2;aspect-ratio:16/9}
+.placeholder-img{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,var(--ice),#c7dcf7);color:#3a7bd5}
+.placeholder-img svg{opacity:.5}.placeholder-img span{font-size:11px;color:var(--muted);letter-spacing:.05em}
+
+#cta{padding:96px 0;background:linear-gradient(135deg,var(--blue) 0%,var(--navy) 100%);text-align:center;position:relative;overflow:hidden}
+#cta::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:28px 28px}
+#cta h2{color:var(--white);position:relative;max-width:640px;margin:0 auto 12px}
+#cta .tag{background:rgba(255,255,255,.15);color:rgba(255,255,255,.9)}
+#cta p{color:rgba(255,255,255,.7);font-size:17px;line-height:1.7;max-width:520px;margin:0 auto 40px;position:relative;font-weight:300}
+.btn-wa-lg{display:inline-flex;align-items:center;gap:12px;background:var(--wa);color:#fff;text-decoration:none;padding:20px 44px;border-radius:100px;font-size:18px;font-weight:500;position:relative;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 8px 30px rgba(37,211,102,.35)}
+.btn-wa-lg:hover{background:var(--wa-dk);transform:translateY(-3px);box-shadow:0 14px 40px rgba(37,211,102,.45)}
+footer{background:#080f1e;padding:36px 24px;text-align:center}
+.footer-name{font-family:"Syne",sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:4px}
+.footer-city{color:rgba(255,255,255,.4);font-size:13px;margin-bottom:20px}
+.footer-wa{display:inline-flex;align-items:center;gap:8px;color:var(--wa);text-decoration:none;font-size:14px;border:1px solid rgba(37,211,102,.3);padding:8px 20px;border-radius:100px;transition:background .2s}
+.footer-wa:hover{background:rgba(37,211,102,.1)}
+.footer-copy{color:rgba(255,255,255,.2);font-size:11px;margin-top:24px;letter-spacing:.04em}
+.float-wa{position:fixed;bottom:24px;right:24px;width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 24px rgba(37,211,102,.45);z-index:200;transition:transform .2s,box-shadow .2s}
+.float-wa:hover{transform:scale(1.08);box-shadow:0 10px 32px rgba(37,211,102,.55)}
+@media(max-width:768px){.hero-btns{flex-direction:column}.btn-wa,.btn-ghost{width:100%;justify-content:center}.services-grid{grid-template-columns:1fr}.diffs-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}.gallery-wide{grid-column:span 2}}
+@media(max-width:480px){.header-wa .label{display:none}h1{font-size:30px}}
+</style>
+</head>
+<body>
+<header><div class="container header-inner">
+  <div class="logo">Soluções Técnicas e Digitais<span>Porto Alegre e região – Rio Grande do Sul</span></div>
+  <a href="https://wa.me/5551996184755" target="_blank" rel="noopener" class="header-wa"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.119 1.532 5.845L.057 23.527a.5.5 0 0 0 .608.676l5.945-1.55A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-4.988-1.361l-.357-.212-3.708.968.986-3.607-.232-.37A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg><span class="label">WhatsApp</span></a>
+</div></header>
+<section id="hero">
+  <div class="hero-dots" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <div class="hero-badge"><span class="hero-badge-dot"></span>Disponível para atendimento</div>
+    <h1>Serviços profissionais<br>com <em>qualidade</em> e confiança</h1>
+    <p class="hero-sub">Trabalho com instalação e manutenção de ar-condicionado e também desenvolvimento de soluções digitais simples para empresas que precisam organizar e apresentar seus serviços online.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/5551996184755" target="_blank" rel="noopener" class="btn-wa"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.119 1.532 5.845L.057 23.527a.5.5 0 0 0 .608.676l5.945-1.55A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-4.988-1.361l-.357-.212-3.708.968.986-3.607-.232-.37A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>Falar no WhatsApp</a>
+      <a href="#services" class="btn-ghost">Ver serviços<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="hero-chips">
+      <div class="chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Porto Alegre e região – RS</div>
+      <div class="chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Soluções digitais</div>
+      <div class="chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>Ar-condicionado</div>
+    </div>
+  </div>
+</section>
+<section id="services"><div class="container">
+  <div class="section-header reveal"><div class="tag">O que ofereço</div><h2>Meus Serviços</h2><p class="section-sub">Do conforto térmico à presença digital, resolvo com qualidade e agilidade.</p></div>
+  <div class="services-grid"><div class="card reveal" style="transition-delay:0.00s"><div class="card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="9" rx="2"/><path d="M7 13v2M12 13v6M17 13v2M5 15l2 2M19 15l-2 2M10 19l2 2 2-2"/></svg></div><h3>Instalação de Ar-Condicionado</h3><p>Instalação completa com acabamento profissional, elétrica e testes de funcionamento.</p></div><div class="card reveal" style="transition-delay:0.05s"><div class="card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><h3>Manutenção e Limpeza</h3><p>Higienização, revisão e manutenção preventiva para aumentar a vida útil do equipamento.</p></div><div class="card reveal" style="transition-delay:0.10s"><div class="card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h3>Catálogos Digitais</h3><p>Criação de catálogos digitais que funcionam direto no celular para apresentar produtos ou serviços.</p></div><div class="card reveal" style="transition-delay:0.15s"><div class="card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Páginas para WhatsApp</h3><p>Criação de páginas simples para divulgar seu negócio e enviar para clientes.</p></div></div>
+</div></section>
+<section id="diferenciais"><div class="container">
+  <div class="section-header reveal"><div class="tag">Por que me escolher</div><h2>Meus Diferenciais</h2></div>
+  <div class="diffs-grid"><div class="diff-item reveal" style="transition-delay:0.00s"><div class="diff-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><p>Atendimento direto — fale comigo direto pelo WhatsApp, sem intermediários.</p></div><div class="diff-item reveal" style="transition-delay:0.05s"><div class="diff-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><p>Soluções simples e eficientes — sem complicação, entrego o que você precisa.</p></div><div class="diff-item reveal" style="transition-delay:0.10s"><div class="diff-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><p>Organização profissional — serviços bem organizados e apresentados com cuidado.</p></div><div class="diff-item reveal" style="transition-delay:0.15s"><div class="diff-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><p>Atendimento em Porto Alegre e região — presencial ou à distância quando possível.</p></div></div>
+</div></section>
+<section id="galeria"><div class="container">
+  <div class="section-header reveal">
+    <div class="tag">Trabalhos realizados</div>
+    <h2>Galeria</h2>
+    <p class="section-sub">Alguns dos serviços já entregues com qualidade e capricho.</p>
+  </div>
+  <div class="gallery-grid"><div class="gallery-item gallery-wide reveal" style="transition-delay:0.00s"><div class="placeholder-img"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Foto do serviço</span></div></div><div class="gallery-item reveal" style="transition-delay:0.06s"><div class="placeholder-img"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Foto do serviço</span></div></div><div class="gallery-item reveal" style="transition-delay:0.12s"><div class="placeholder-img"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Foto do serviço</span></div></div><div class="gallery-item reveal" style="transition-delay:0.18s"><div class="placeholder-img"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Foto do serviço</span></div></div><div class="gallery-item reveal" style="transition-delay:0.24s"><div class="placeholder-img"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Foto do serviço</span></div></div><div class="gallery-item reveal" style="transition-delay:0.30s"><div class="placeholder-img"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Foto do serviço</span></div></div></div>
+</div></section>
+<section id="cta"><div class="container">
+  <div class="tag reveal">Vamos conversar?</div>
+  <h2 class="reveal">Precisa instalar ar-condicionado ou modernizar seu negócio?</h2>
+  <p class="reveal">Mande uma mensagem agora mesmo. Atendimento rápido, direto e sem complicação.</p>
+  <a href="https://wa.me/5551996184755" target="_blank" rel="noopener" class="btn-wa-lg reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.119 1.532 5.845L.057 23.527a.5.5 0 0 0 .608.676l5.945-1.55A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-4.988-1.361l-.357-.212-3.708.968.986-3.607-.232-.37A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>Chamar no WhatsApp agora</a>
+</div></section>
+<footer>
+  <div class="footer-name">Solução Digital Rs</div>
+  <div class="footer-city">Porto Alegre – RS</div>
+  <a href="https://wa.me/5551996184755" target="_blank" rel="noopener" class="footer-wa"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.119 1.532 5.845L.057 23.527a.5.5 0 0 0 .608.676l5.945-1.55A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-4.988-1.361l-.357-.212-3.708.968.986-3.607-.232-.37A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>Contato via WhatsApp</a>
+  <div class="footer-copy">© 2026   · Todos os direitos reservados</div>
+</footer>
+<a href="https://wa.me/5551996184755" target="_blank" rel="noopener" class="float-wa" aria-label="WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.119 1.532 5.845L.057 23.527a.5.5 0 0 0 .608.676l5.945-1.55A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-4.988-1.361l-.357-.212-3.708.968.986-3.607-.232-.37A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg></a>
+<script>
+const reveals=document.querySelectorAll(".reveal");
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target)}})},{threshold:.12});
+reveals.forEach(el=>io.observe(el));
+document.addEventListener("DOMContentLoaded",()=>{
+  document.querySelectorAll("#hero .hero-badge,#hero h1,#hero .hero-sub,#hero .hero-btns,#hero .hero-chips").forEach((el,i)=>{
+    el.style.opacity="0";el.style.transform="translateY(24px)";
+    el.style.transition="opacity .65s ease "+(i*.12)+"s,transform .65s ease "+(i*.12)+"s";
+    requestAnimationFrame(()=>{el.style.opacity="1";el.style.transform="none"});
+  });
+});
+document.querySelectorAll("a[href^='#']").forEach(a=>{a.addEventListener("click",e=>{e.preventDefault();const t=document.querySelector(a.getAttribute("href"));if(t)t.scrollIntoView({behavior:"smooth",block:"start"})})});
+</script>
+</body>
+</html>
