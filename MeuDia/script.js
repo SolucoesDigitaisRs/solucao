@@ -78,7 +78,13 @@ async function save() {
 const uid   = () => Date.now().toString(36) + Math.random().toString(36).slice(2);
 const fmt   = v  => new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(v||0);
 const fmtD  = d  => { if(!d) return '—'; const [y,m,dd]=d.split('-'); return `${dd}/${m}/${y}`; };
-const today = () => new Date().toISOString().slice(0,10);
+// Retorna 'YYYY-MM-DD' no fuso de Brasília (UTC-3), nunca em UTC
+const today = () => {
+  const d = new Date();
+  // Offset de Brasília: UTC-3 (sem horário de verão desde 2019)
+  const brt = new Date(d.getTime() - 3 * 60 * 60 * 1000);
+  return brt.toISOString().slice(0, 10);
+};
 function diffDays(ds) {
   const n=new Date(); n.setHours(0,0,0,0);
   return Math.round((new Date(ds+'T00:00:00')-n)/86400000);
@@ -1257,5 +1263,7 @@ async function init() {
   bindNavItems();
   render();
 }
+
+init();
 
 init();
