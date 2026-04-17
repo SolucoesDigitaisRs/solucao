@@ -577,3 +577,26 @@ td.td-acoes .act-btn{display:inline-flex;}
 .feature-item-icon{font-size:20px;flex-shrink:0;margin-top:1px;}
 .feature-item-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px;}
 .feature-item-desc{font-size:11px;color:var(--muted);line-height:1.4;}
+
+/* ═══ MODAL VER DETALHES ════════════════════════════════════════════ */
+.detail-row{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  padding:10px 0;border-bottom:1px solid var(--border);
+  gap:16px;
+}
+.detail-row:last-child{border-bottom:none;}
+.detail-row-label{
+  font-size:11px;font-weight:600;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.5px;
+  flex-shrink:0;padding-top:1px;
+}
+.detail-row-value{
+  font-size:14px;color:var(--text);text-align:right;
+  word-break:break-word;
+}
+/* Botão ver na tabela */
+.act-btn.view:hover{
+  background:var(--purplesoft,rgba(167,139,250,.12));
+  border-color:var(--purple,#a78bfa);
+  color:var(--purple,#a78bfa);
+}

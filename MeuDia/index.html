@@ -16,8 +16,6 @@
 </head>
 <body>
 
-
-
 <!-- ════════════ APP ════════════ -->
 <div class="app">
 
@@ -39,7 +37,6 @@
       <div class="nav-item" data-page="sobre"><span class="nav-icon">ℹ️</span><span class="nav-label">Sobre o App</span></div>
       <div class="nav-item" data-page="termos"><span class="nav-icon">📄</span><span class="nav-label">Termos de Uso</span></div>
       <div class="nav-item" data-page="privacidade"><span class="nav-icon">🔒</span><span class="nav-label">Privacidade</span></div>
-     
     </nav>
     <div class="sidebar-footer">
       <div class="date-card">
@@ -80,7 +77,6 @@
     <div class="mob-nav-item" data-page="termos"><div class="mob-nav-icon">📄</div><div class="mob-nav-label">Termos</div></div>
     <div class="mob-nav-item" data-page="privacidade"><div class="mob-nav-icon">🔒</div><div class="mob-nav-label">Privac.</div></div>
   </div>
-  
 </nav>
 
 <!-- MOBILE DRAWER OVERLAY -->
@@ -102,7 +98,6 @@
     <div class="nav-item" data-page="sobre"><span class="nav-icon">ℹ️</span><span class="nav-label">Sobre o App</span></div>
     <div class="nav-item" data-page="termos"><span class="nav-icon">📄</span><span class="nav-label">Termos de Uso</span></div>
     <div class="nav-item" data-page="privacidade"><span class="nav-icon">🔒</span><span class="nav-label">Política de Privacidade</span></div>
-    
   </nav>
   <div class="drawer-footer">
     <div class="date-card">
@@ -227,13 +222,34 @@
   </div>
 </div>
 
+
+<!-- MODAL: VER DETALHES -->
+<div class="modal-overlay" id="modal-detail">
+  <div class="modal" style="max-width:400px;">
+    <div class="modal-handle"></div>
+    <div class="modal-head">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span id="detail-icon" style="font-size:28px;"></span>
+        <div>
+          <h2 class="modal-title" id="detail-title" style="font-size:16px;"></h2>
+          <span id="detail-badge" class="badge" style="margin-top:4px;"></span>
+        </div>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-detail')">✕</button>
+    </div>
+    <div id="detail-rows"></div>
+    <div class="form-actions" style="margin-top:20px;">
+      <button class="btn-secondary" onclick="closeModal('modal-detail')">Fechar</button>
+      <button class="btn-primary" onclick="_detailEditCallback()">✏ Editar</button>
+    </div>
+  </div>
+</div>
+
 <!-- INPUT OCULTO PARA IMPORTAR -->
 <input type="file" id="import-file" accept=".json" style="display:none" onchange="handleImport(this)"/>
 
 <div id="toast-container"></div>
 
   <script src="script.js"></script>
-
-
 </body>
 </html>

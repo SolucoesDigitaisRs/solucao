@@ -447,6 +447,7 @@ function renderPagar() {
       + '<td><span class="badge '+s+'">'+s+'</span></td>'
       + '<td class="td-valor" style="color:'+(p.pago?'var(--green)':'var(--red)')+'">'+fmt(p.valor)+'</td>'
       + '<td class="td-acoes">'
+      + '<button class="act-btn view" onclick="viewPagar(\''+p.id+'\')" title="Ver detalhes">&#128065;</button> '
       + '<button class="act-btn check" onclick="togglePago(\''+p.id+'\')" title="'+(p.pago?'Desmarcar':'Marcar pago')+'">'+(p.pago?'&#8617;':'&#10003;')+'</button> '
       + '<button class="act-btn edit" onclick="editPagar(\''+p.id+'\')" title="Editar">&#9999;</button> '
       + '<button class="act-btn del" onclick="deletePagar(\''+p.id+'\')" title="Excluir">&#128465;</button>'
@@ -557,6 +558,7 @@ function renderReceber() {
       + '<td><span class="badge '+s+'">'+s+'</span></td>'
       + '<td class="td-valor" style="color:'+(r.recebido?'var(--green)':'var(--gold)')+'">'+fmt(r.valor)+'</td>'
       + '<td class="td-acoes">'
+      + '<button class="act-btn view" onclick="viewReceber(\''+r.id+'\')" title="Ver detalhes">&#128065;</button> '
       + '<button class="act-btn check" onclick="toggleRecebido(\''+r.id+'\')" title="'+(r.recebido?'Desmarcar':'Marcar recebido')+'">'+(r.recebido?'&#8617;':'&#10003;')+'</button> '
       + '<button class="act-btn edit" onclick="editReceber(\''+r.id+'\')" title="Editar">&#9999;</button> '
       + '<button class="act-btn del" onclick="deleteReceber(\''+r.id+'\')" title="Excluir">&#128465;</button>'
@@ -1229,6 +1231,83 @@ function renderPrivacidade() {
     <div class="info-last-update">Versão 1.0 · Conformidade LGPD · Janeiro 2025</div>
   </div>
 </div>`;
+}
+
+
+// ════════════════════════════════════════════════════════════════════
+// VER DETALHES — PAGAR / RECEBER
+// ════════════════════════════════════════════════════════════════════
+function viewPagar(id) {
+  const p = pagar.find(p => p.id === id);
+  if (!p) return;
+  const s = statusPagar(p.data, p.pago);
+  const d = diffDays(p.data);
+  const prazo = p.pago ? '—' : d === 0 ? 'Vence hoje' : d === 1 ? 'Vence amanhã' : d < 0 ? Math.abs(d) + ' dia(s) em atraso' : 'Vence em ' + d + ' dia(s)';
+  showDetail({
+    icon: ICONS[p.cat] || '📦',
+    title: p.desc,
+    badge: s,
+    badgeClass: s,
+    rows: [
+      { label: 'Valor',      value: fmt(p.valor),  highlight: p.pago ? 'green' : 'red' },
+      { label: 'Vencimento', value: fmtD(p.data)   },
+      { label: 'Prazo',      value: prazo,          highlight: s === 'vencido' ? 'red' : s === 'hoje' ? 'gold' : '' },
+      { label: 'Categoria',  value: p.cat           },
+      { label: 'Status',     value: p.pago ? 'Pago ✓' : 'Pendente', highlight: p.pago ? 'green' : 'orange' },
+      { label: 'Observação', value: p.obs || '—'   },
+    ],
+    onEdit: () => { closeModal('modal-detail'); editPagar(id); },
+  });
+}
+
+function viewReceber(id) {
+  const r = receber.find(r => r.id === id);
+  if (!r) return;
+  const s = statusReceber(r.data, r.recebido);
+  const d = diffDays(r.data);
+  const prazo = r.recebido ? '—' : d === 0 ? 'Previsto hoje' : d === 1 ? 'Previsto amanhã' : d < 0 ? Math.abs(d) + ' dia(s) em atraso' : 'Em ' + d + ' dia(s)';
+  showDetail({
+    icon: ICONS[r.cat] || '💰',
+    title: r.desc,
+    badge: s,
+    badgeClass: s,
+    rows: [
+      { label: 'Valor',      value: fmt(r.valor),  highlight: r.recebido ? 'green' : 'gold' },
+      { label: 'Previsão',   value: fmtD(r.data)   },
+      { label: 'Prazo',      value: prazo,          highlight: s === 'vencido' ? 'red' : s === 'hoje' ? 'gold' : '' },
+      { label: 'Origem',     value: r.cat           },
+      { label: 'Status',     value: r.recebido ? 'Recebido ✓' : 'Pendente', highlight: r.recebido ? 'green' : 'orange' },
+      { label: 'Observação', value: r.obs || '—'   },
+    ],
+    onEdit: () => { closeModal('modal-detail'); editReceber(id); },
+  });
+}
+
+// ── Motor genérico do modal de detalhes ──────────────────────────────
+let _detailEditCallback = () => {};
+
+function showDetail({ icon, title, badge, badgeClass, rows, onEdit }) {
+  _detailEditCallback = onEdit || (() => {});
+
+  document.getElementById('detail-icon').textContent  = icon;
+  document.getElementById('detail-title').textContent = title;
+
+  const badgeEl = document.getElementById('detail-badge');
+  badgeEl.textContent  = badge;
+  badgeEl.className    = 'badge ' + (badgeClass || '');
+
+  const colors = { green:'var(--green)', red:'var(--red)', gold:'var(--gold)', orange:'var(--orange)', blue:'var(--blue)' };
+
+  document.getElementById('detail-rows').innerHTML = rows.map(row =>
+    '<div class="detail-row">'
+    + '<span class="detail-row-label">' + row.label + '</span>'
+    + '<span class="detail-row-value"' + (row.highlight ? ' style="color:' + (colors[row.highlight] || row.highlight) + ';font-weight:600;"' : '') + '>'
+    + row.value
+    + '</span>'
+    + '</div>'
+  ).join('');
+
+  openModal('modal-detail');
 }
 
 // ════════════════════════════════════════════════════════════════════
