@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - Serviços Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e293b;
+            --text-color: #334155;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --accent-color: #3b82f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--primary-color);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -2rem auto 3rem;
+            padding: 0 1rem;
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .intro {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .section-icon {
+            font-size: 1.5rem;
+            background: #eff6ff;
+            color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .section-text h2 {
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-text p {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .section { flex-direction: column; gap: 0.5rem; }
+            .content-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Serviços Pro</h1>
+        <p>Transparência e respeito à sua privacidade</p>
+    </header>
+
+    <div class="container">
+        <main class="content-card">
+            <div class="intro">
+                <span class="badge">Privacidade Local Ativada</span>
+                <p>Esta política descreve como o aplicativo <strong>Serviços Pro</strong> trata as suas informações. Nossa prioridade é a sua soberania sobre seus próprios dados.</p>
+            </div>
+
+            <div class="section">
+                <div class="section-icon">📊</div>
+                <div class="section-text">
+                    <h2>1. Dados Coletados</h2>
+                    <p>O <strong>Serviços Pro</strong> <span class="highlight">não coleta nenhum dado pessoal</span> do usuário. Todas as informações inseridas — clientes, serviços, financeiro, orçamentos e demais registros — são processadas e armazenadas exclusivamente no seu dispositivo.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-icon">💾</div>
+                <div class="section-text">
+                    <h2>2. Armazenamento Local</h2>
+                    <p>Os dados são persistidos via <strong>IndexedDB</strong> (tecnologia nativa de navegadores/WebView) dentro do seu dispositivo. Nenhuma informação é transmitida para servidores externos, nuvem ou terceiros de forma automatizada.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-icon">🚫</div>
+                <div class="section-text">
+                    <h2>3. Acesso de Terceiros</h2>
+                    <p>O desenvolvedor não tem acesso aos dados inseridos pelo usuário. Não utilizamos serviços de analytics, publicidade invasiva, rastreamento ou qualquer plataforma de terceiros que realize coleta de dados em segundo plano.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-icon">📤</div>
+                <div class="section-text">
+                    <h2>4. Compartilhamento de Dados</h2>
+                    <p>Os arquivos gerados (backups, comprovantes, planilhas) são compartilhados <strong>apenas por ação explícita</strong> e voluntária do usuário (ao clicar em exportar ou compartilhar). O desenvolvedor não participa ou monitora esses processos.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-icon">🛡️</div>
+                <div class="section-text">
+                    <h2>5. Segurança</h2>
+                    <p>A segurança dos dados depende diretamente da integridade do seu dispositivo. Recomendamos o uso de bloqueio de tela, armazenamento de backups em locais seguros e o uso do app apenas em dispositivos confiáveis.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-icon">🔞</div>
+                <div class="section-text">
+                    <h2>6. Menores de Idade</h2>
+                    <p>O Serviços Pro não é destinado a menores de 18 anos. Não coletamos intencionalmente nenhuma informação de identificação de menores de idade.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-icon">🗑️</div>
+                <div class="section-text">
+                    <h2>7. Exclusão de Dados</h2>
+                    <p>Você tem controle total. É possível excluir todos os dados a qualquer momento através da função <strong>"Apagar Todos os Dados"</strong> na seção de Backup, ou simplesmente desinstalando o aplicativo do sistema.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-icon">✉️</div>
+                <div class="section-text">
+                    <h2>8. Contato</h2>
+                    <p>Dúvidas sobre esta Política podem ser encaminhadas diretamente ao desenvolvedor. Respeitamos integralmente a <strong>Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</strong>.</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Serviços Pro - Todos os direitos reservados.</p>
+        <p>Atualizado em: 2025</p>
+    </footer>
+
+</body>
+</html>
