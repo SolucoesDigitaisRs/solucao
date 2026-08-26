@@ -1,23 +1,26 @@
  /* ==========================================================================
    1. CONFIGURAÇÕES GERAIS E WHATSAPP
    ========================================================================== */
- // Número do WhatsApp da MS Split (Código do país + DDD + Número)
- const WHATSAPP_NUMBER = "5551996184755";
- const DEFAULT_MESSAGE = "Olá! Gostaria de solicitar um orçamento com a MS Split. ❄️";
+// Número do WhatsApp da MS Split (Código do país + DDD + Número)
+const WHATSAPP_NUMBER = "5551996184755";
+const DEFAULT_MESSAGE = "Olá! Gostaria de solicitar um orçamento com a MS Split. ❄️";
 
- // Monta a URL padrão de contato
- const whatsappDefaultUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`;
+// URL com mensagem pronta (Botão Flutuante)
+const whatsappDefaultUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`;
 
- // Aplica a URL aos botões estáticos do WhatsApp
- const floatingBtn = document.getElementById("floatingWhatsApp");
- const ctaBtn = document.getElementById("ctaWhatsApp");
+// URL limpa sem mensagem (Botão Fale Conosco)
+const whatsappCleanUrl = `https://wa.me/${WHATSAPP_NUMBER}`;
 
- if (floatingBtn) floatingBtn.href = whatsappDefaultUrl;
- if (ctaBtn) ctaBtn.href = whatsappDefaultUrl;
+// Aplica as URLs aos botões estáticos do WhatsApp
+const floatingBtn = document.getElementById("floatingWhatsApp");
+const ctaBtn = document.getElementById("ctaWhatsApp");
 
- // Atualiza o ano do copyright no rodapé automaticamente
- const yearEl = document.getElementById("year");
- if (yearEl) yearEl.textContent = new Date().getFullYear();
+if (floatingBtn) floatingBtn.href = whatsappDefaultUrl; // Mantém mensagem padrão
+if (ctaBtn) ctaBtn.href = whatsappCleanUrl;             // Abre sem mensagem
+
+// Atualiza o ano do copyright no rodapé automaticamente
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 
  /* ==========================================================================
