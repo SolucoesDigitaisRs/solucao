@@ -32,67 +32,95 @@
       max-width: 480px;
       background: linear-gradient(180deg, #1b4332 0%, #112a1f 100%);
       border-radius: 16px;
-      padding: 24px 0; /* Padding lateral removido para o slider encostar nas bordas */
+      padding: 24px 0;
       box-shadow: 0 10px 25px rgba(0,0,0,0.6);
       border: 1px solid #2d6a4f;
       overflow: hidden;
     }
 
-    /* Cabeçalho */
-    .header {
+    /* SEÇÃO HERO COM IMAGEM DE FUNDO E ESCURECIMENTO PARA LEITURA */
+    .hero {
+      position: relative;
+      background: 
+        linear-gradient(180deg, rgba(13, 35, 26, 0.75) 0%, rgba(17, 42, 31, 0.95) 100%), 
+        url('img/c.conceito.jpeg') center/cover no-repeat;
+      border-radius: 12px;
+      padding: 30px 20px 24px 20px;
+      margin: 0 15px 24px 15px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
       text-align: center;
-      margin-bottom: 24px;
-      border-bottom: 1px solid rgba(201, 162, 39, 0.2);
-      padding: 0 24px 20px 24px;
     }
-    .header img {
-      max-width: 140px;
-      height: 140px;
+
+    .hero img {
+      max-width: 130px;
+      height: 130px;
       width: 100%;
       object-fit: cover;
       border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(13, 35, 26, 0.6);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
       margin-bottom: 12px;
-      border: 1px solid rgba(212, 175, 55, 0.3);
+      border: 2px solid #d4af37;
     }
+
     .profile-info h1 {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       color: #ffffff;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
+
     .profile-info .badge {
       display: inline-block;
       color: #d4af37;
       font-size: 0.85rem;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
       margin-top: 4px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
 
-    /* Links de Contato */
     .contact-details {
       margin-top: 12px;
       font-size: 0.9rem;
       line-height: 1.8;
     }
+
     .contact-link {
-      color: #d1e7dd;
+      color: #ffffff;
+      font-weight: 600;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: color 0.2s;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+      background: rgba(13, 35, 26, 0.6);
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      transition: color 0.2s, border-color 0.2s;
     }
+
     .contact-link:hover {
       color: #d4af37;
+      border-color: #d4af37;
     }
+
+    .location {
+      color: #d1e7dd;
+      font-size: 0.85rem;
+      margin-top: 4px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+
     .click-hint {
       font-size: 0.75rem;
       color: #d4af37;
-      margin-top: 4px;
-      opacity: 0.8;
+      margin-top: 6px;
+      font-weight: 500;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
 
     /* Título da Seção */
@@ -107,7 +135,13 @@
       padding: 0 24px;
     }
 
-    /* GALERIA SLIDER (DESLIZÁVEL HORIZONTAL) */
+    /* WRAPPER E SLIDER */
+    .slider-wrapper {
+      position: relative;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
     .gallery-slider {
       display: flex;
       overflow-x: auto;
@@ -115,9 +149,9 @@
       gap: 15px;
       padding: 5px 24px 15px 24px;
       -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
     }
     
-    /* Oculta a barra de rolagem visual mantendo a funcionalidade */
     .gallery-slider::-webkit-scrollbar {
       display: none;
     }
@@ -126,9 +160,60 @@
       scrollbar-width: none;
     }
 
+    /* SETAS DE NAVEGAÇÃO (Aparecem somente no Hover no PC) */
+.nav-arrow {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    background-color: rgba(13, 35, 26, 0.95);
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    z-index: 10;
+    
+    /* Efeito de transparência suave */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.2s;
+  }
+
+  /* Revela as setas ao passar o mouse sobre a linha da galeria */
+  .slider-wrapper:hover .nav-arrow {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Destaque ao passar o mouse direto na seta */
+  .nav-arrow:hover {
+    background-color: #1b4332;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  }
+
+  /* Posicionamento nas extremidades exatas */
+  .nav-arrow.prev {
+    left: 8px;
+  }
+
+  .nav-arrow.next {
+    right: 8px;
+  }
+}
+
     /* Card do Chalé */
     .card {
-      flex: 0 0 75%; /* Mostra 75% do card e deixa o próximo visível */
+      flex: 0 0 75%;
       max-width: 280px;
       scroll-snap-align: center;
       background: #0d231a;
@@ -157,7 +242,7 @@
       color: #e2e8f0;
     }
 
-    /* Dica visual para deslizar */
+    /* Dica visual para deslizar no celular */
     .swipe-hint {
       text-align: center;
       font-size: 0.75rem;
@@ -169,22 +254,23 @@
 <body>
 
   <div class="container">
-    <!-- CABEÇALHO COM CONTATO CLICÁVEL -->
-    <div class="header">
-      <img src="img/logo.jpg" alt="Dunna Modulados">
-      
-      <div class="profile-info">
-        <h1>BIMBO</h1>
-        <span class="badge">Representante Comercial</span>
-        
-        <div class="contact-details">
-          <p>
-            <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20vim%20pelo%20QR%20Code!" class="contact-link" target="_blank">
-              📞 (54) 99222-4700
-            </a>
-          </p>
-          <p style="color: #94a3b8; font-size: 0.85rem;">📍 Não-Me-Toque — RS</p>
-          <p class="click-hint">💬 Toque no número para iniciar a conversa</p>
+    <!-- SEÇÃO HERO DE DESTAQUE -->
+    <div class="hero">
+      <div class="hero-content">
+        <img src="img/logodunna.png" alt="Dunna Modulados">
+        <div class="profile-info">
+          <h1>BIMBO</h1>
+          <span class="badge">Representante Comercial</span>
+          
+          <div class="contact-details">
+            <p>
+              <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20vim%20pelo%20QR%20Code!" class="contact-link" target="_blank">
+                📞 (54) 99222-4700
+              </a>
+            </p>
+            <p class="location">📍 Não-Me-Toque — RS</p>
+            <p class="click-hint">💬 Toque no número para iniciar a conversa</p>
+          </div>
         </div>
       </div>
     </div>
@@ -192,186 +278,197 @@
     <!-- TÍTULO -->
     <div class="section-title">✦ Nossos Modelos ✦</div>
 
-    <!-- GALERIA DESLIZÁVEL HORIZONTAL -->
-    <div class="gallery-slider">
+    <!-- GALERIA 1: PROJETOS ESPECIAIS -->
+    <div class="slider-wrapper">
+      <button class="nav-arrow prev" onclick="scrollGallery('slider1', -1)" aria-label="Anterior">❮</button>
       
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
-        <img src="img/chale_perola.jpg" alt="Chalé Pérola">
-        <div class="card-title">Chalé Pérola</div>
-      </a>
+      <div class="gallery-slider" id="slider1">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+          <img src="img/projetos especiais/1.jpeg" alt="Projetos Especiais 1">
+          <div class="card-title">Modelos de Projetos Especiais</div>
+        </a>
 
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20Diamante" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_2.jpg" alt="Chalé Diamante">
-        <div class="card-title">Chalé Diamante</div>
-      </a>
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20Diamante" target="_blank" class="card">
+          <img src="img/projetos especiais/2.jpeg" alt="Projetos Especiais 2">
+          <div class="card-title">Modelos de Projetos Especiais</div>
+        </a>
 
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Loft%20Premium" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_3.jpg" alt="Loft Premium">
-        <div class="card-title">Loft Premium</div>
-      </a>
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Loft%20Premium" target="_blank" class="card">
+          <img src="img/projetos especiais/3.jpeg" alt="Projetos Especiais 3">
+          <div class="card-title">Modelos de Projetos Especiais</div>
+        </a>
 
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 1</div>
-      </a>
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
+          <img src="img/projetos especiais/4.jpeg" alt="Projetos Especiais 4">
+          <div class="card-title">Modelos de Projetos Especiais</div>
+        </a>
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
+          <img src="img/projetos especiais/5.jpeg" alt="Projetos Especiais 4">
+          <div class="card-title">Modelos de Projetos Especiais</div>
+        </a>
+      </div>
 
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 2</div>
-      </a>
-
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 3</div>
-      </a>
-
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 4</div>
-      </a>
-
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 5</div>
-      </a>
-
+      <button class="nav-arrow next" onclick="scrollGallery('slider1', 1)" aria-label="Próximo">❯</button>
     </div>
 
-     <!-- GALERIA DESLIZÁVEL HORIZONTAL -->
-    <div class="gallery-slider">
+    <!-- GALERIA 2: CABANA ESSENCE -->
+    <div class="slider-wrapper">
+      <button class="nav-arrow prev" onclick="scrollGallery('slider2', -1)" aria-label="Anterior">❮</button>
       
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
-        <img src="img/chale_perola.jpg" alt="Chalé Pérola">
-        <div class="card-title">Chalé Pérola</div>
-      </a>
+      <div class="gallery-slider" id="slider2">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Essence" target="_blank" class="card">
+          <img src="img/cabana essence/1.jpeg" alt="Cabana Essence 1">
+          <div class="card-title">Cabana Essence</div>
+        </a>
 
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20Diamante" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_2.jpg" alt="Chalé Diamante">
-        <div class="card-title">Chalé Diamante</div>
-      </a>
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Essence" target="_blank" class="card">
+          <img src="img/cabana essence/3.jpg" alt="Cabana Essence 2">
+          <div class="card-title">Cabana Essence</div>
+        </a>
+      </div>
 
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Loft%20Premium" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_3.jpg" alt="Loft Premium">
-        <div class="card-title">Loft Premium</div>
-      </a>
-
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 1</div>
-      </a>
-
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 2</div>
-      </a>
-
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 3</div>
-      </a>
-
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 4</div>
-      </a>
-
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 5</div>
-      </a>
-
+      <button class="nav-arrow next" onclick="scrollGallery('slider2', 1)" aria-label="Próximo">❯</button>
     </div>
 
-     <!-- GALERIA DESLIZÁVEL HORIZONTAL -->
-    <div class="gallery-slider">
-      
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
-        <img src="img/chale_perola.jpg" alt="Chalé Pérola">
-        <div class="card-title">Chalé Pérola</div>
-      </a>
-
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20Diamante" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_2.jpg" alt="Chalé Diamante">
-        <div class="card-title">Chalé Diamante</div>
-      </a>
-
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Loft%20Premium" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_3.jpg" alt="Loft Premium">
-        <div class="card-title">Loft Premium</div>
-      </a>
-
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 1</div>
-      </a>
-
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 2</div>
-      </a>
-
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 3</div>
-      </a>
-
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 4</div>
-      </a>
-
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 5</div>
-      </a>
-
+    <!-- GALERIA 3: Chalé vision -->
+    <div class="slider-wrapper">
+      <button class="nav-arrow prev" onclick="scrollGallery('slider3', -1)" aria-label="Anterior">❮</button>
+      <div class="gallery-slider" id="slider3">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+          <img src="img/vision/1.jpeg" alt="Chalé vision">
+          <div class="card-title">chalé vision</div>
+        </a>
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+          <img src="img/vision/2.jpeg" alt="Chalé vision">
+          <div class="card-title">chalé vision</div>
+        </a>
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+          <img src="img/vision/3.jpeg" alt="Chalé vision">
+          <div class="card-title">chalé vision</div>
+        </a>   
+      </div>
+      <button class="nav-arrow next" onclick="scrollGallery('slider3', 1)" aria-label="Próximo">❯</button>
     </div>
 
-     <!-- GALERIA DESLIZÁVEL HORIZONTAL -->
-    <div class="gallery-slider">
-      
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
-        <img src="img/chale_perola.jpg" alt="Chalé Pérola">
-        <div class="card-title">Chalé Pérola</div>
-      </a>
 
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20Diamante" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_2.jpg" alt="Chalé Diamante">
-        <div class="card-title">Chalé Diamante</div>
-      </a>
+    <!-- GALERIA 4: Cabana aurora -->
+    <div class="slider-wrapper">
+      <button class="nav-arrow prev" onclick="scrollGallery('slider4', -1)" aria-label="Anterior">❮</button>
+      <div class="gallery-slider" id="slider4">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+          <img src="img/cabana aurora/2.jpeg" alt="Cabana aurora">
+          <div class="card-title">Cabana aurora - 3,20 x 8</div>
+        </a>
 
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Loft%20Premium" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_3.jpg" alt="Loft Premium">
-        <div class="card-title">Loft Premium</div>
-      </a>
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+          <img src="img/cabana aurora/3.jpeg" alt="Cabana aurora">
+          <div class="card-title">Cabana aurora - 3,20 x 8</div>
+        </a>
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+          <img src="img/cabana aurora/1.jpeg" alt="Cabana aurora">
+          <div class="card-title">Cabana aurora - 3,20 x 8</div>
+        </a>   
+      </div>
+      <button class="nav-arrow next" onclick="scrollGallery('slider4', 1)" aria-label="Próximo">❯</button>
+    </div>
 
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 1</div>
-      </a>
 
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 2</div>
-      </a>
 
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 3</div>
-      </a>
+    <!-- GALERIA 5: Chalé Pérola -->
+    <div class="slider-wrapper">
+      <button class="nav-arrow prev" onclick="scrollGallery('slider5', -1)" aria-label="Anterior">❮</button>
+      <div class="gallery-slider" id="slider5">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+          <img src="img/perola/3.jpeg" alt="Chalé Pérola">
+          <div class="card-title">Chalé Pérola - 3,20 x 8</div>
+        </a>
 
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 4</div>
-      </a>
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+          <img src="img/perola/2.jpeg" alt="Chalé Pérola">
+          <div class="card-title">Chalé Pérola - 3,20 x 8</div>
+        </a>
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+          <img src="img/perola/1.jpeg" alt="Chalé Pérola">
+          <div class="card-title">Chalé Pérola - 3,20 x 8</div>
+        </a>   
+      </div>
+      <button class="nav-arrow next" onclick="scrollGallery('slider5', 1)" aria-label="Próximo">❯</button>
+    </div>
+     <!-- GALERIA 6: Chalé Plus -->
+    <div class="slider-wrapper">
+      <button class="nav-arrow prev" onclick="scrollGallery('slider6', -1)" aria-label="Anterior">❮</button>
+      <div class="gallery-slider" id="slider6">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+          <img src="img/plus/1.jpeg" alt="Chalé Plus">
+          <div class="card-title">Chalé Plus - 3 x 6</div>
+        </a>
 
-      <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
-        <img src="URL_DA_FOTO_CHALE_4.jpg" alt="Cabana Alpine">
-        <div class="card-title">Cabana Alpine 5</div>
-      </a>
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+          <img src="img/plus/2.jpeg" alt="Chalé Plus">
+          <div class="card-title">Chalé Plus - 3 x 6</div>
+        </a>
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+          <img src="img/plus/3.jpeg" alt="Chalé Plus">
+          <div class="card-title">Chalé Plus - 3 x 6</div>
+        </a>   
+      </div>
+      <button class="nav-arrow next" onclick="scrollGallery('slider6', 1)" aria-label="Próximo">❯</button>
+    </div>
+    <!-- GALERIA 7: Chalé Master -->
+    <div class="slider-wrapper">
+      <button class="nav-arrow prev" onclick="scrollGallery('slider7', -1)" aria-label="Anterior">❮</button>
+      <div class="gallery-slider" id="slider7">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+          <img src="img/master/1.jpeg" alt="Chalé Master">
+          <div class="card-title">Chalé Master - 3 x 4</div>
+        </a>
 
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+          <img src="img/master/2.jpeg" alt="Chalé Master">
+          <div class="card-title">Chalé Master - 3 x 4</div>
+        </a> 
+      </div>
+      <button class="nav-arrow next" onclick="scrollGallery('slider7', 1)" aria-label="Próximo">❯</button>
+    </div>
+    <!-- GALERIA 8: Cabana do Vale -->
+    <div class="slider-wrapper">
+      <button class="nav-arrow prev" onclick="scrollGallery('slider8', -1)" aria-label="Anterior">❮</button>
+      <div class="gallery-slider" id="slider8">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+          <img src="img/cabana do vale/3.jpeg" alt="Cabana do Vale">
+          <div class="card-title">Cabana do Vale - 3,20 x 8</div>
+        </a>
+
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+          <img src="img/cabana do vale/1.jpeg" alt="Cabana do Vale">
+          <div class="card-title">Cabana do Vale - 3,20 x 8</div>
+        </a>
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+          <img src="img/cabana do vale/2.jpeg" alt="Cabana do Vale">
+          <div class="card-title">Cabana do Vale - 3,20 x 8</div>
+        </a>
+      </div>
+      <button class="nav-arrow next" onclick="scrollGallery('slider8', 1)" aria-label="Próximo">❯</button>
+    </div>
+
+    <!-- GALERIA 9: chale prada e loft-->
+    <div class="slider-wrapper">
+      <button class="nav-arrow prev" onclick="scrollGallery('slider9', -1)" aria-label="Anterior">❮</button>
+      <div class="gallery-slider" id="slider9">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+          <img src="img/chale prada/1.jpeg" alt="Chalé prada">
+          <div class="card-title">Chalé Prada - 3,20 x 8</div>
+        </a>
+
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+          <img src="img/loft/1.jpeg" alt="Loft">
+          <div class="card-title">Loft</div>
+        </a> 
+      </div>
+      <button class="nav-arrow next" onclick="scrollGallery('slider9', 1)" aria-label="Próximo">❯</button>
     </div>
     
+
     <div class="swipe-hint">👉 Deslize para o lado para ver mais modelos</div>
   </div>
 
@@ -379,6 +476,17 @@
   <audio id="audioBoasVindas" src="Boas_Vindas.mp3" preload="auto"></audio>
 
   <script>
+    // Função para rodar os sliders de forma independente ao clicar nas setas (PC)
+    function scrollGallery(sliderId, direction) {
+      var slider = document.getElementById(sliderId);
+      var scrollAmount = 250;
+      slider.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+
+    // Controle de áudio por sessão
     document.addEventListener("DOMContentLoaded", function() {
       var audio = document.getElementById("audioBoasVindas");
 
@@ -389,7 +497,7 @@
             document.removeEventListener("click", tocarAudio);
             document.removeEventListener("touchstart", tocarAudio);
           }).catch(function(error) {
-            console.log("Autoplay bloqueado pelo navegador. Aguardando interação.");
+            console.log("Autoplay bloqueado pelo navegador.");
           });
         }
 
