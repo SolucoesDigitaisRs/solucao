@@ -249,6 +249,56 @@
       color: #94a3b8;
       margin-top: 8px;
     }
+      /* Container da dica de áudio flutuante */
+.audio-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 5;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Animação do dedinho apontando para baixo */
+.finger-icon {
+  font-size: 1.8rem;
+  animation: tapDownAnimation 1.2s infinite ease-in-out;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+/* Texto acima do dedinho */
+.hint-text {
+  font-size: 0.75rem;
+  color: #d4af37;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+  background: rgba(13, 35, 26, 0.85);
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+}
+
+/* Esconde o elemento */
+.audio-hint.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Movimento do dedinho empurrando para baixo */
+@keyframes tapDownAnimation {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(6px) scale(1.1);
+  }
+}
+
   </style>
 </head>
 <body>
@@ -257,6 +307,10 @@
     <!-- SEÇÃO HERO DE DESTAQUE -->
     <div class="hero">
       <div class="hero-content">
+          <div id="audioHint" class="audio-hint">
+         <span class="hint-text">Toque para ouvir</span>
+          <span class="finger-icon">👇</span>
+          </div>
         <img src="img/logodunna.png" alt="Dunna Modulados">
         <div class="profile-info">
           <h1>BIMBO</h1>
@@ -283,26 +337,26 @@
       <button class="nav-arrow prev" onclick="scrollGallery('slider1', -1)" aria-label="Anterior">❮</button>
       
       <div class="gallery-slider" id="slider1">
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20os%20Modelos%20de%20Projetos%20Especiais" target="_blank" class="card">
           <img src="img/projetos especiais/1.jpeg" alt="Projetos Especiais 1">
           <div class="card-title">Modelos de Projetos Especiais</div>
         </a>
 
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20Diamante" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20os%20Modelos%20de%20Projetos%20Especiais" target="_blank" class="card">
           <img src="img/projetos especiais/2.jpeg" alt="Projetos Especiais 2">
           <div class="card-title">Modelos de Projetos Especiais</div>
         </a>
 
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Loft%20Premium" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20os%20Modelos%20de%20Projetos%20Especiais" target="_blank" class="card">
           <img src="img/projetos especiais/3.jpeg" alt="Projetos Especiais 3">
           <div class="card-title">Modelos de Projetos Especiais</div>
         </a>
 
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20os%20Modelos%20de%20Projetos%20Especiais" target="_blank" class="card">
           <img src="img/projetos especiais/4.jpeg" alt="Projetos Especiais 4">
           <div class="card-title">Modelos de Projetos Especiais</div>
         </a>
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Alpine" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20os%20Modelos%20de%20Projetos%20Especiais" target="_blank" class="card">
           <img src="img/projetos especiais/5.jpeg" alt="Projetos Especiais 4">
           <div class="card-title">Modelos de Projetos Especiais</div>
         </a>
@@ -334,15 +388,15 @@
     <div class="slider-wrapper">
       <button class="nav-arrow prev" onclick="scrollGallery('slider3', -1)" aria-label="Anterior">❮</button>
       <div class="gallery-slider" id="slider3">
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20Vision" target="_blank" class="card">
           <img src="img/vision/1.jpeg" alt="Chalé vision">
           <div class="card-title">chalé vision</div>
         </a>
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20Vision" target="_blank" class="card">
           <img src="img/vision/2.jpeg" alt="Chalé vision">
           <div class="card-title">chalé vision</div>
         </a>
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+       <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20Vision" target="_blank" class="card">
           <img src="img/vision/3.jpeg" alt="Chalé vision">
           <div class="card-title">chalé vision</div>
         </a>   
@@ -355,16 +409,16 @@
     <div class="slider-wrapper">
       <button class="nav-arrow prev" onclick="scrollGallery('slider4', -1)" aria-label="Anterior">❮</button>
       <div class="gallery-slider" id="slider4">
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Aurora" target="_blank" class="card">
           <img src="img/cabana aurora/2.jpeg" alt="Cabana aurora">
           <div class="card-title">Cabana aurora - 3,20 x 8</div>
         </a>
 
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Aurora" target="_blank" class="card">
           <img src="img/cabana aurora/3.jpeg" alt="Cabana aurora">
           <div class="card-title">Cabana aurora - 3,20 x 8</div>
         </a>
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20Aurora" target="_blank" class="card">
           <img src="img/cabana aurora/1.jpeg" alt="Cabana aurora">
           <div class="card-title">Cabana aurora - 3,20 x 8</div>
         </a>   
@@ -383,11 +437,11 @@
           <div class="card-title">Chalé Pérola - 3,20 x 8</div>
         </a>
 
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
           <img src="img/perola/2.jpeg" alt="Chalé Pérola">
           <div class="card-title">Chalé Pérola - 3,20 x 8</div>
         </a>
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
           <img src="img/perola/1.jpeg" alt="Chalé Pérola">
           <div class="card-title">Chalé Pérola - 3,20 x 8</div>
         </a>   
@@ -398,16 +452,16 @@
     <div class="slider-wrapper">
       <button class="nav-arrow prev" onclick="scrollGallery('slider6', -1)" aria-label="Anterior">❮</button>
       <div class="gallery-slider" id="slider6">
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20Plus" target="_blank" class="card">
           <img src="img/plus/1.jpeg" alt="Chalé Plus">
           <div class="card-title">Chalé Plus - 3 x 6</div>
         </a>
 
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20Plus" target="_blank" class="card">
           <img src="img/plus/2.jpeg" alt="Chalé Plus">
           <div class="card-title">Chalé Plus - 3 x 6</div>
         </a>
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20vision" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20Plus" target="_blank" class="card">
           <img src="img/plus/3.jpeg" alt="Chalé Plus">
           <div class="card-title">Chalé Plus - 3 x 6</div>
         </a>   
@@ -418,12 +472,12 @@
     <div class="slider-wrapper">
       <button class="nav-arrow prev" onclick="scrollGallery('slider7', -1)" aria-label="Anterior">❮</button>
       <div class="gallery-slider" id="slider7">
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20Master" target="_blank" class="card">
           <img src="img/master/1.jpeg" alt="Chalé Master">
           <div class="card-title">Chalé Master - 3 x 4</div>
         </a>
 
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20Master" target="_blank" class="card">
           <img src="img/master/2.jpeg" alt="Chalé Master">
           <div class="card-title">Chalé Master - 3 x 4</div>
         </a> 
@@ -434,16 +488,16 @@
     <div class="slider-wrapper">
       <button class="nav-arrow prev" onclick="scrollGallery('slider8', -1)" aria-label="Anterior">❮</button>
       <div class="gallery-slider" id="slider8">
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20do%20Vale" target="_blank" class="card">
           <img src="img/cabana do vale/3.jpeg" alt="Cabana do Vale">
           <div class="card-title">Cabana do Vale - 3,20 x 8</div>
         </a>
 
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20do%20Vale" target="_blank" class="card">
           <img src="img/cabana do vale/1.jpeg" alt="Cabana do Vale">
           <div class="card-title">Cabana do Vale - 3,20 x 8</div>
         </a>
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20a%20Cabana%20do%20Vale" target="_blank" class="card">
           <img src="img/cabana do vale/2.jpeg" alt="Cabana do Vale">
           <div class="card-title">Cabana do Vale - 3,20 x 8</div>
         </a>
@@ -455,12 +509,12 @@
     <div class="slider-wrapper">
       <button class="nav-arrow prev" onclick="scrollGallery('slider9', -1)" aria-label="Anterior">❮</button>
       <div class="gallery-slider" id="slider9">
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20Prada" target="_blank" class="card">
           <img src="img/chale prada/1.jpeg" alt="Chalé prada">
           <div class="card-title">Chalé Prada - 3,20 x 8</div>
         </a>
 
-        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Chal%C3%A9%20P%C3%A9rola" target="_blank" class="card">
+        <a href="https://wa.me/5554992224700?text=Ol%C3%A1%20Bimbo,%20gostaria%20de%20saber%20mais%20sobre%20o%20Loft" target="_blank" class="card">
           <img src="img/loft/1.jpeg" alt="Loft">
           <div class="card-title">Loft</div>
         </a> 
@@ -487,24 +541,34 @@
     }
 
     // Controle de áudio por sessão
-    document.addEventListener("DOMContentLoaded", function() {
-      var audio = document.getElementById("audioBoasVindas");
+   document.addEventListener("DOMContentLoaded", function() {
+  var audio = document.getElementById("audioBoasVindas");
+  var audioHint = document.getElementById("audioHint");
 
-      if (!sessionStorage.getItem("audioTocado")) {
-        function tocarAudio() {
-          audio.play().then(function() {
-            sessionStorage.setItem("audioTocado", "true");
-            document.removeEventListener("click", tocarAudio);
-            document.removeEventListener("touchstart", tocarAudio);
-          }).catch(function(error) {
-            console.log("Autoplay bloqueado pelo navegador.");
-          });
-        }
+  // Se o áudio já tiver tocado nesta sessão, esconde a dica imediatamente
+  if (sessionStorage.getItem("audioTocado")) {
+    if (audioHint) audioHint.classList.add("hidden");
+  } else {
+    function iniciarAudioEEsconderDica() {
+      audio.play().then(function() {
+        sessionStorage.setItem("audioTocado", "true");
+        
+        // Esconde a animação do dedo assim que o áudio começa
+        if (audioHint) audioHint.classList.add("hidden");
 
-        document.addEventListener("click", tocarAudio);
-        document.addEventListener("touchstart", tocarAudio);
-      }
-    });
+        // Remove os ouvintes de evento
+        document.removeEventListener("click", iniciarAudioEEsconderDica);
+        document.removeEventListener("touchstart", iniciarAudioEEsconderDica);
+      }).catch(function(error) {
+        console.log("Aguardando interação do usuário para tocar o áudio.");
+      });
+    }
+
+    document.addEventListener("click", iniciarAudioEEsconderDica);
+    document.addEventListener("touchstart", iniciarAudioEEsconderDica);
+  }
+});
+
   </script>
 
 </body>
