@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d47a1">
+  <meta name="description" content="MR Ar Condicionado — instalação, higienização, manutenção, PMOC e venda de ar-condicionado. Atendimento em Alvorada e Região Metropolitana de Porto Alegre.">
+  <meta name="keywords" content="ar condicionado Alvorada, instalação ar condicionado, higienização ar condicionado, manutenção ar condicionado, PMOC, venda ar condicionado">
+  <meta property="og:title" content="MR Ar Condicionado | Alvorada e Região">
+  <meta property="og:description" content="Instalação, higienização, manutenção, PMOC e venda de ar-condicionado.">
+  <meta property="og:type" content="website">
+  <title>MR Ar Condicionado | Alvorada e Região</title>
+  <link rel="icon" href="assets/favico_logo_mr_512x512.png" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+       
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+   
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white protected-page">
+
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 bg-white border border-blue-600 rounded-xl flex items-center justify-center p-2 shadow-md group-hover:scale-105 transition-transform overflow-hidden">
+    <img src="assets/logo_mr_512x512.png" alt="Logo MR Ar Condicionado" class="w-full h-full object-contain">
+</div>
+                    <div class="flex flex-col">
+                        <span class="font-black text-2xl tracking-tight text-brand-900 leading-none">MR</span>
+                        <span class="text-xs font-bold text-cyan-600 tracking-widest uppercase">Ar Condicionado</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
+                    <a href="#inicio" class="hover:text-brand-600 transition-colors">Início</a>
+                    <a href="#sobre" class="hover:text-brand-600 transition-colors">Sobre</a>
+                    <a href="#servicos" class="hover:text-brand-600 transition-colors">Serviços</a>
+                    <a href="#galeria" class="hover:text-brand-600 transition-colors">Galeria</a>
+                    <a href="#pmoc" class="hover:text-brand-600 transition-colors">PMOC</a>
+                    <a href="#diferenciais" class="hover:text-brand-600 transition-colors">Por que Nós?</a>
+                    <a href="#contato" class="hover:text-brand-600 transition-colors">Orçamento</a>
+                </nav>
+
+                <!-- Header CTA Button -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="https://wa.me/5551996184755?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20ar-condicionado." target="_blank" rel="noopener noreferrer" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2.5 rounded-xl text-sm flex items-center gap-2 shadow-md shadow-green-600/20 transition-all hover:shadow-lg hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>(51) 99618-4755</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" aria-label="Abrir Menu" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-brand-600 hover:bg-slate-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">Início</a>
+            <a href="#sobre" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">Sobre</a>
+            <a href="#servicos" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">Serviços</a>
+            <a href="#galeria" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">Galeria</a>
+            <a href="#pmoc" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">PMOC Legal</a>
+            <a href="#diferenciais" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">Por que a MR?</a>
+            <a href="#contato" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">Orçamento</a>
+            <div class="pt-2">
+                <a href="https://wa.me/5551996184755?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-md">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Falar no WhatsApp Agora</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="digital-sign marquee" role="region" aria-label="Serviços oferecidos">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>Instalação</span>
+                <span aria-hidden="true">•</span>
+                <span>Higienização</span>
+                <span aria-hidden="true">•</span>
+                <span>Manutenção</span>
+                <span aria-hidden="true">•</span>
+                <span>PMOC</span>
+                <span aria-hidden="true">•</span>
+                <span>Vendas</span>
+                <span aria-hidden="true">•</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span>Instalação</span>
+                <span>•</span>
+                <span>Higienização</span>
+                <span>•</span>
+                <span>Manutenção</span>
+                <span>•</span>
+                <span>PMOC</span>
+                <span>•</span>
+                <span>Vendas</span>
+                <span>•</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="inicio" class="relative hero-gradient text-white py-20 lg:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="hero-copy lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-transparent border border-brand-400/30 backdrop-blur-md px-4 py-1.5 rounded-full text-cyan-300 text-sm font-semibold">
+                        <i class="fa-solid fa-shield-halved text-xs"></i> Atendimento em Alvorada, Porto Alegre e Região
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Soluções Completas em <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-300">Ar Condicionado</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Instalação técnica, higienização profunda, manutenção especializada e adequação ao PMOC. Garantimos conforto térmico, eficiência energética e ar puro para sua casa ou empresa.
+                    </p>
+
+                    <!-- Feature Bullets -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left pt-2 pb-4 max-w-xl mx-auto lg:mx-0">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xs flex-shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="text-sm text-slate-200">Técnicos Certificados</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xs flex-shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="text-sm text-slate-200">Garantia em Serviços</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xs flex-shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="text-sm text-slate-200">Adequação de PMOC por Lei</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xs flex-shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="text-sm text-slate-200">Orçamento Rápido via WhatsApp</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="https://wa.me/5551996184755?text=Ol%C3%A1!%20Quero%20solicitar%20um%20or%C3%A7amento%20gratuito." target="_blank" class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold px-8 py-4 rounded-xl text-base flex items-center justify-center gap-3 shadow-lg shadow-green-600/30 transition-all hover:scale-[1.02]">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Solicitar Orçamento Grátis</span>
+                        </a>
+                        <a href="#servicos" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-4 rounded-xl text-base flex items-center justify-center transition-all">
+                            Ver Nossos Serviços
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Floating Card Form -->
+                <div class="lg:col-span-5" >
+                    <div class="glass-card text-white p-6 sm:p-8 rounded-3xl shadow-2xl border border-white/20" bg-cover bg-center overflow-hidden" 
+         style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), url('assets/mr_predio.jpg');">
+
+                        <div class="text-center mb-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-cyan-300 bg-cyan-400/20 px-3 py-1 rounded-full">MR</span>
+                            <h3 class="text-2xl font-bold text-white mt-2">AR CONDICIONADO</h3>
+                            <p class="text-xs text-slate-300 mt-1">Resposta em poucos minutos via WhatsApp</p>
+                        </div>
+                        <img src="assets/markting.jpg" alt="Veículo da MR Ar Condicionado" class="w-full h-auto rounded-2xl object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Faixa Informativa Pós-Hero -->
+<div class="w-full bg-white border-y border-slate-200 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-y divide-slate-700/60 md:divide-y-0 md:divide-slate-200">
+            
+            <!-- Item 1: Instalação -->
+            <div class="bg-white flex items-center gap-3 p-4 md:py-0 md:px-6 first:pl-0 last:pr-0">
+                <span class="w-10 h-10 shrink-0 rounded-full border-2 border-cyan-500 flex items-center justify-center text-cyan-600">
+                    <i class="fa-solid fa-screwdriver-wrench text-sm" aria-hidden="true"></i>
+                </span>
+                <div>
+                    <h3 class="text-base font-bold text-slate-900 mb-1">Instalação</h3>
+                    <p class="text-sm text-slate-500">Equipamentos instalados com cuidado</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Higienização -->
+            <div class="bg-white flex items-center gap-3 p-4 md:py-0 md:px-6 first:pl-0 last:pr-0 max-md:!border-t-0">
+                <span class="w-10 h-10 shrink-0 rounded-full border-2 border-cyan-500 flex items-center justify-center text-cyan-600">
+                    <i class="fa-solid fa-spray-can-sparkles text-sm" aria-hidden="true"></i>
+                </span>
+                <div>
+                    <h3 class="text-base font-bold text-slate-900 mb-1">Higienização</h3>
+                    <p class="text-sm text-slate-500">Mais limpeza para o seu ambiente</p>
+                </div>
+            </div>
+
+            <!-- Item 3: Manutenção -->
+            <div class="bg-white flex items-center gap-3 p-4 md:py-0 md:px-6 first:pl-0 last:pr-0 max-md:!border-l-0">
+                <span class="w-10 h-10 shrink-0 rounded-full border-2 border-cyan-500 flex items-center justify-center text-cyan-600">
+                    <i class="fa-solid fa-gear text-sm" aria-hidden="true"></i>
+                </span>
+                <div>
+                    <h3 class="text-base font-bold text-slate-900 mb-1">Manutenção</h3>
+                    <p class="text-sm text-slate-500">Seu aparelho funcionando melhor</p>
+                </div>
+            </div>
+
+            <!-- Item 4: PMOC -->
+            <div class="bg-white flex items-center gap-3 p-4 md:py-0 md:px-6 first:pl-0 last:pr-0">
+                <span class="w-10 h-10 shrink-0 rounded-full border-2 border-cyan-500 flex items-center justify-center text-cyan-600">
+                    <i class="fa-solid fa-file-contract text-sm" aria-hidden="true"></i>
+                </span>
+                <div>
+                    <h3 class="text-base font-bold text-slate-900 mb-1">PMOC</h3>
+                    <p class="text-sm text-slate-500">Gestão da qualidade do ar</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 rounded-[2rem] bg-brand-50"></div>
+                    <div class="relative overflow-hidden rounded-[1.5rem] shadow-xl border border-slate-100">
+                        <img src="assets/veiculo-mr-ar-condicionado.jpg" alt="Veículo de atendimento da MR Ar Condicionado" class="w-full aspect-[4/3] object-cover">
+                    </div>
+                    <span class="absolute bottom-5 left-5 right-5 sm:right-auto inline-flex items-center gap-2 rounded-xl bg-slate-900/90 px-4 py-3 text-sm font-semibold text-white shadow-lg backdrop-blur-sm">
+                        <i class="fa-solid fa-location-dot text-cyan-400"></i>
+                        Atendimento MR Ar Condicionado
+                    </span>
+                </div>
+
+                <div>
+                    <span class="text-brand-600 text-sm font-bold tracking-widest uppercase bg-brand-50 px-3 py-1 rounded-full border border-brand-100">SOBRE A MR</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight text-slate-900 mt-5">
+                        Climatização com atendimento <span class="text-brand-600">direto e profissional.</span>
+                    </h2>
+                    <div class="mt-6 space-y-4 text-slate-600 leading-relaxed">
+                        <p>A MR Ar Condicionado atua com soluções para climatização, oferecendo instalação, higienização, manutenção, PMOC e venda de equipamentos.</p>
+                        <p>O objetivo é entregar um atendimento claro, desde a avaliação da necessidade até a execução do serviço, buscando conforto e segurança para cada ambiente.</p>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-x-6 gap-y-4 mt-8 text-sm font-semibold text-slate-700">
+                        <div class="flex items-center gap-3">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600">✓</span>
+                            <span>Atendimento pelo WhatsApp</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600">✓</span>
+                            <span>Soluções para diferentes ambientes</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600">✓</span>
+                            <span>Instalação, limpeza e manutenção</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600">✓</span>
+                            <span>Atendimento em Alvorada e região</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="servicos" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 text-sm font-bold tracking-widest uppercase bg-brand-50 px-3 py-1 rounded-full border border-brand-100">Soluções em Climatização</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Nossos Serviços Especializados</h2>
+                <p class="text-slate-600 mt-3 text-base">Atendemos residências, comércios, escritórios e indústrias com a máxima qualidade e eficiência.</p>
+            </div>
+
+            <!-- Grid of 5 Services -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="-mx-8 -mt-8 mb-8 h-44 overflow-hidden rounded-t-2xl">
+                        <img src="assets/instalação.jpg" alt="Técnico realizando instalação de ar condicionado" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600 text-2xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Instalação de Ar Condicionado</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Instalação técnica e segura para modelos Split, Hi-Wall, Cassete e Inverter. Seguimos rigorosamente os padrões dos fabricantes para preservar sua garantia.
+                        </p>
+                    </div>
+                    <button onclick="openServiceModal('Instalação', 'Realizamos a instalação completa do seu equipamento, dimensionando a tubulação de cobre adequada, fiação elétrica, drenagem e teste de vácuo do sistema para garantir o máximo desempenho e durabilidade.')" class="text-brand-600 font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all pt-4 border-t border-slate-100">
+                        <span>Saiba Mais</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="-mx-8 -mt-8 mb-8 h-44 overflow-hidden rounded-t-2xl">
+                        <img src="assets/mssplit_higienizando.jpg" alt="Profissional realizando higienização e limpeza" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 bg-cyan-50 rounded-2xl flex items-center justify-center text-cyan-600 text-2xl mb-6 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-pump-soap"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Higienização e Limpeza Profunda</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Limpeza completa com produtos bactericidas homologados. Elimina fungos, ácaros e maus odores, protegendo a saúde da sua família e funcionários.
+                        </p>
+                    </div>
+                    <button onclick="openServiceModal('Higienização', 'Nossa higienização inclui desmontagem parcial, limpeza das serpentinas, turbina, filtros e bandeja de dreno com lavadora de alta pressão específica e aplicação de bactericida para prevenção de problemas respiratórios.')" class="text-brand-600 font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all pt-4 border-t border-slate-100">
+                        <span>Saiba Mais</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="-mx-8 -mt-8 mb-8 h-44 overflow-hidden rounded-t-2xl">
+                        <img src="assets/manut_preventiva.jpg" alt="Ferramentas para manutenção técnica" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Manutenção Preventiva e Corretiva</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Diagnóstico preciso, recarga de gás refrigerante, troca de peças, conserto de vazamentos e correção de falhas de refrigeração no sistema.
+                        </p>
+                    </div>
+                    <button onclick="openServiceModal('Manutenção', 'Efetuamos recarga de gás (R410A, R32, R22), reparos na placa eletrônica, substituição de capacitores, compressores e reparos em vazamentos de fluido refrigerante.')" class="text-brand-600 font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all pt-4 border-t border-slate-100">
+                        <span>Saiba Mais</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Service 4 (PMOC) -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-brand-200 relative overflow-hidden flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="absolute top-0 right-0 bg-brand-600 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-lg">Obrigatório por Lei</div>
+                    <div class="-mx-8 -mt-8 mb-8 h-44 overflow-hidden rounded-t-2xl">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80" alt="Documentação e planejamento para PMOC" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 text-2xl mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">PMOC para Empresas</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Elaboração e execução do Plano de Manutenção, Operação e Controle conforme Lei 13.589/2018 para evitar multas da Vigilância Sanitária.
+                        </p>
+                    </div>
+                    <button onclick="openServiceModal('PMOC Legal', 'Desenvolvemos o Plano de Manutenção obrigatorio para prédios comerciais, clínicas, escritórios e órgãos públicos, garantindo laudos técnicos, ART e histórico de manutenção regular.')" class="text-brand-600 font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all pt-4 border-t border-slate-100">
+                        <span>Saiba Mais</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group hover:-translate-y-1">
+                    <div class="-mx-8 -mt-8 mb-8 h-44 overflow-hidden rounded-t-2xl">
+                        <img src="assets/venda.jpg" alt="Equipamento de ar condicionado para venda" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 text-2xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Venda de Ar Condicionado</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Orientação completa para compra do equipamento ideal no tamanho certo (BTUs) para seu ambiente, trabalhando com as melhores marcas do mercado.
+                        </p>
+                    </div>
+                    <button onclick="openServiceModal('Venda de Equipamentos', 'Ajudamos você a escolher o melhor aparelho Inverter para economizar até 60% de energia elétrica. Trabalhamos com conselhos técnicos sob medida para seu espaço.')" class="text-brand-600 font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all pt-4 border-t border-slate-100">
+                        <span>Saiba Mais</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- CTA Box inside Grid -->
+                <div class="bg-gradient-to-br from-brand-800 to-brand-900 rounded-2xl p-8 text-white flex flex-col justify-between shadow-lg">
+                    <div>
+                        <span class="text-cyan-400 font-bold text-xs uppercase tracking-wider">Atendimento Agilizado</span>
+                        <h3 class="text-2xl font-bold mt-2 mb-3">Precisa de um orçamento personalizado?</h3>
+                        <p class="text-slate-300 text-sm mb-6">Mande uma mensagem agora no WhatsApp da MR Ar Condicionado. Respondemos imediatamente!</p>
+                    </div>
+                    <a href="https://wa.me/5551996184755?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20seus%20servi%C3%A7os." target="_blank" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl text-center text-sm flex items-center justify-center gap-2 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Falar com Técnico no Whats</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-12">
+                <span class="text-brand-600 text-sm font-bold tracking-widest uppercase bg-brand-50 px-3 py-1 rounded-full border border-brand-100">NOSSO TRABALHO</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-5">
+                    Presença e atendimento <span class="text-brand-600">MR</span>
+                </h2>
+                <p class="text-slate-600 mt-4 text-base leading-relaxed">Este espaço está preparado para receber fotos reais das instalações, higienizações e manutenções realizadas pela empresa.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-6">
+                <div class="min-h-[20rem] overflow-hidden rounded-3xl border border-slate-100 bg-slate-100 shadow-lg">
+                    <img src="assets/veiculo-mr-ar-condicionado.jpg" alt="Veículo da MR Ar Condicionado" class="h-full w-full object-cover">
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
+                    <div class="flex min-h-[9.5rem] flex-col items-center justify-center rounded-3xl border-2 border-dashed border-brand-200 bg-brand-50/60 p-6 text-center transition-colors hover:border-brand-400 hover:bg-brand-50">
+                        <span class="text-4xl font-light leading-none text-brand-500">+</span>
+                        <b class="mt-3 text-lg font-bold text-slate-800">Fotos dos serviços</b>
+                        <small class="mt-1 text-sm text-slate-500">imagens reais dos trabalhos.</small>
+                    </div>
+                    <div class="flex min-h-[9.5rem] flex-col items-center justify-center rounded-3xl border-2 border-dashed border-cyan-200 bg-cyan-50/60 p-6 text-center transition-colors hover:border-cyan-400 hover:bg-cyan-50">
+                        <span class="text-4xl font-light leading-none text-cyan-500">+</span>
+                        <b class="mt-3 text-lg font-bold text-slate-800">Instalações</b>
+                        <small class="mt-1 text-sm text-slate-500">Mostre o acabamento dos serviços.</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 flex justify-center">
+                <a href="https://www.instagram.com/mr_assistencia.tecnica/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-4 rounded-2xl bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 px-6 py-4 text-white shadow-lg shadow-pink-500/20 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-pink-500/30">
+                    <i class="fa-brands fa-instagram text-3xl" aria-hidden="true"></i>
+                    <span class="text-left">
+                        <span class="block text-xs font-semibold uppercase tracking-wider text-white/80">Mais fotos e imagens</span>
+                        <span class="block text-base font-bold">Acesse nosso Instagram</span>
+                        <span class="block text-sm text-white/90">@mr_assistencia.tecnica</span>
+                    </span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-sm opacity-80 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="pmoc" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="bg-brand-500/20 text-cyan-400 border border-brand-500/30 text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full inline-block">
+                        Exigência Legal para Empresas
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Sua empresa está em dia com o <span class="text-cyan-400">PMOC</span>?
+                    </h2>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        A <strong>Lei Federal nº 13.589/2018</strong> torna obrigatório o Plano de Manutenção, Operação e Controle (PMOC) para todos os edifícios de uso público e coletivo que possuem sistema de ar condicionado.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 bg-slate-800/60 p-4 rounded-xl border border-slate-700/50">
+                            <div class="w-10 h-10 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Evite Multas Pesadas</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">As multas por falta de PMOC aplicadas pela Vigilância Sanitária podem ultrapassar R$ 200.000,00.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 bg-slate-800/60 p-4 rounded-xl border border-slate-700/50">
+                            <div class="w-10 h-10 rounded-lg bg-green-500/20 text-green-400 flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fa-solid fa-lungs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Qualidade do Ar e Saúde Operacional</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Previne contaminações biológicas, reduz atestados médicos por síndromes respiratórias e melhora o rendimento.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 bg-slate-800/60 p-4 rounded-xl border border-slate-700/50">
+                            <div class="w-10 h-10 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Redução na Conta de Luz</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Aparelhos limpos e regulados consomem até 30% menos energia elétrica na sua empresa.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/5551996184755?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20e%20um%20or%C3%A7amento%20para%20implanta%C3%A7%C3%A3o%20do%20PMOC%20na%20minha%20empresa." target="_blank" class="inline-flex items-center gap-3 bg-brand-500 hover:bg-brand-600 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-brand-500/30">
+                            <i class="fa-solid fa-file-signature text-xl"></i>
+                            <span>Solicitar Adequação de PMOC</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Graphic/Info Box -->
+                <div class="lg:col-span-6">
+                    <div class="bg-slate-800/80 backdrop-blur border border-slate-700 p-8 rounded-3xl space-y-6">
+                        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-list-check text-cyan-400"></i>
+                            O que está incluso no nosso plano PMOC?
+                        </h3>
+
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-cyan-400"></i>
+                                Cadastramento técnico de todos os equipamentos
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-cyan-400"></i>
+                                Cronograma de manutenção preventiva periódica
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-cyan-400"></i>
+                                Emissão da Responsabilidade Técnica (ART)
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-cyan-400"></i>
+                                Relatórios de vistoria técnica e histórico de intervenções
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-cyan-400"></i>
+                                Monitoramento da qualidade do ar interior
+                            </li>
+                        </ul>
+
+                        <div class="p-4 bg-slate-900/80 rounded-2xl border border-slate-700/60 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Dúvidas Frequentes</span>
+                                <span class="font-semibold text-white text-sm">Quem precisa de PMOC?</span>
+                            </div>
+                            <span class="text-xs bg-slate-700 text-slate-200 px-3 py-1 rounded-full">Soma &gt; 60.000 BTUs</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="diferenciais" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 text-sm font-bold tracking-widest uppercase bg-brand-50 px-3 py-1 rounded-full">Por que nos escolher</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Compromisso com Qualidade e Confiança</h2>
+                <p class="text-slate-600 mt-3 text-base">A MR Ar Condicionado une transparência, agilidade e excelência em cada atendimento.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center hover:bg-brand-50 transition-colors group">
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-sm text-brand-600 flex items-center justify-center mx-auto text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Técnicos Capacitados</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Profissionais treinados para prestar serviço limpo, rápido e com total segurança.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center hover:bg-brand-50 transition-colors group">
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-sm text-brand-600 flex items-center justify-center mx-auto text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Pontualidade no Atendimento</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Respeitamos seu tempo com horários agendados e cumprimento rigoroso de prazos.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center hover:bg-brand-50 transition-colors group">
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-sm text-brand-600 flex items-center justify-center mx-auto text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Preço Justo e Transparente</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Sem custos ocultos. Orçamentos detalhados apresentados antes de cada execução.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center hover:bg-brand-50 transition-colors group">
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-sm text-brand-600 flex items-center justify-center mx-auto text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Garantia Comprovada</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Todos os nossos serviços contam com garantia de instalação e manutenção.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 text-sm font-bold tracking-widest uppercase bg-brand-50 px-3 py-1 rounded-full">Depoimentos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">O que nossos clientes dizem</h2>
+                <p class="text-slate-600 mt-3 text-base">Satisfação de quem já contratou nossos serviços de climatização.</p>
+            </div>
+
+            <div class="testimonials-carousel" id="testimonials-carousel">
+                <button class="testimonial-arrow testimonial-arrow-prev" type="button" aria-label="Depoimento anterior">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <div class="testimonials-viewport">
+                    <div class="testimonials-track">
+                <!-- Review 1 -->
+                <article class="testimonial-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm italic">"Instalaram dois aparelhos split na minha residência em Alvorada. Serviço impecável, muito limpos e atenciosos. Recomendo com certeza!"</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center text-sm">
+                            RC
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Ricardo Costa</h4>
+                            <span class="text-xs text-slate-400">Cliente Residencial - Alvorada</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Review 2 -->
+                <article class="testimonial-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm italic">"Fechei o contrato de PMOC para o nosso escritório comercial. Cumprem todas as normas e facilitaram demais a parte burocrática."</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-cyan-100 text-cyan-700 font-bold flex items-center justify-center text-sm">
+                            MA
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Mariana Almeida</h4>
+                            <span class="text-xs text-slate-400">Gestora Comercial - Porto Alegre</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Review 3 -->
+                <article class="testimonial-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm italic">"A higienização do meu ar que estava com cheiro forte resolveu na hora. O ar ficou gelando como novo! Preço muito justo."</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-green-100 text-green-700 font-bold flex items-center justify-center text-sm">
+                            FA
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Felipe Azevedo</h4>
+                            <span class="text-xs text-slate-400">Cliente Residencial</span>
+                        </div>
+                    </article>
+                        </div>
+                    </div>
+                    <button class="testimonial-arrow testimonial-arrow-next" type="button" aria-label="Próximo depoimento">
+                        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-tr from-brand-900 via-brand-800 to-slate-900 rounded-3xl p-4 sm:p-12 text-white shadow-2xl relative overflow-hidden">
+                <div class="grid lg:grid-cols-12 gap-10 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="text-cyan-400 font-bold text-xs uppercase tracking-widest">Entre em Contato</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Pronto para climatizar seu ambiente?</h2>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Fale diretamente com nossa equipe técnica. Respondemos rapidamente para tirar dúvidas e agendar uma visita técnica sem compromisso.
+                        </p>
+
+                        <div class="space-y-4 pt-4">
+                            <a href="https://wa.me/5551996184755" target="_blank" class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 bg-green-500/20 group-hover:bg-green-500 text-green-400 group-hover:text-white rounded-xl flex items-center justify-center text-xl transition-all">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">WhatsApp / Telefone</span>
+                                    <span class="text-lg font-bold text-white">(51) 99618-4755</span>
+                                </div>
+                            </a>
+
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-brand-500/20 text-cyan-400 rounded-xl flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">Área de Cobertura</span>
+                                    <span class="text-base font-semibold text-white">Alvorada, Porto Alegre e Região Metropolitana - RS</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-brand-500/20 text-cyan-400 rounded-xl flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">Horário de Atendimento</span>
+                                    <span class="text-base font-semibold text-white">Segunda a Sábado: 08:00 às 18:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Form -->
+                    <div class="lg:col-span-6 bg-white text-slate-800 p-4 sm:p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Solicite seu Orçamento</h3>
+                        <p class="text-xs text-slate-500 mb-6">Preencha os campos e entraremos em contato via WhatsApp.</p>
+
+                        <form id="main-contact-form" onsubmit="sendFormToWhatsApp(event, 'main-contact-form')" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Nome Completo</label>
+                                <input type="text" id="main-name" required placeholder="Seu nome" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Telefone com DDD</label>
+                                <input type="tel" id="main-phone" required placeholder="(51) 99362-4454" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Serviço de Interesse</label>
+                                <select id="main-service" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 outline-none text-sm bg-white">
+                                    <option value="Instalação">Instalação de Ar Condicionado</option>
+                                    <option value="Higienização">Higienização e Limpeza</option>
+                                    <option value="Manutenção">Manutenção Preventiva / Corretiva</option>
+                                    <option value="PMOC">Plano PMOC para Empresas</option>
+                                    <option value="Venda">Venda de Aparelhos</option>
+                                    <option value="Outros">Outros assuntos</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1" for="main-model-btus">Modelo / BTUs (se souber)</label>
+                                <input type="text" id="main-model-btus" placeholder="Ex.: Split 12.000 BTUs" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1" for="main-quantity">Quantidade de aparelhos</label>
+                                <select id="main-quantity" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 outline-none text-sm bg-white">
+                                    <option value="1 aparelho">1 aparelho</option>
+                                    <option value="2 aparelhos">2 aparelhos</option>
+                                    <option value="3 aparelhos">3 aparelhos</option>
+                                    <option value="4 aparelhos">4 aparelhos</option>
+                                    <option value="5 aparelhos">5 aparelhos</option>
+                                    <option value="6 ou mais aparelhos">6 ou mais aparelhos</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1" for="main-location">Cidade / Bairro</label>
+                                <input type="text" id="main-location" placeholder="Ex.: Alvorada - Centro" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Mensagem ou endereço completo (opcional)</label>
+                                <textarea id="main-message" rows="3" placeholder="Descreva o que precisa ou informe o endereço completo, se desejar..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 outline-none text-sm"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3.5 rounded-xl text-base shadow-md transition-all flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Enviar no WhatsApp</span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="localizacao" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-5 gap-10 items-center">
+                <div class="lg:col-span-2">
+                    <span class="text-brand-600 text-sm font-bold tracking-widest uppercase bg-brand-50 px-3 py-1 rounded-full border border-brand-100">Nossa localização</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-5">Atendimento em <span class="text-brand-600">Alvorada, RS</span></h2>
+                    <p class="text-slate-600 mt-4 leading-relaxed">A MR Ar Condicionado atende Alvorada, Porto Alegre e a Região Metropolitana do Rio Grande do Sul.</p>
+                    <div class="flex items-start gap-3 mt-6 text-slate-700">
+                        <i class="fa-solid fa-location-dot text-brand-600 text-xl mt-1" aria-hidden="true"></i>
+                        <div>
+                            <span class="block font-bold text-slate-900">Alvorada - Rio Grande do Sul</span>
+                            <span class="text-sm text-slate-500">Atendimento residencial e comercial na região.</span>
+                        </div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Alvorada%2C%20RS" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-7 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-5 py-3 rounded-xl shadow-md transition-all hover:-translate-y-0.5">
+                        <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i>
+                        Abrir no Google Maps
+                    </a>
+                </div>
+                <div class="lg:col-span-3 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
+                    <iframe
+                        title="Mapa de localização de Alvorada, Rio Grande do Sul"
+                        src="https://www.google.com/maps?q=Alvorada%2C%20RS&output=embed"
+                        class="block h-80 w-full sm:h-96"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Col 1 -->
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center text-white">
+                            <i> <img src="assets/favico_logo_mr_512x512.png" alt="Logo da MR Ar Condicionado"></i>
+                        </div>
+                        <span class="font-extrabold text-xl text-white tracking-tight">MR Ar Condicionado</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Especialistas em climatização residencial e comercial. Instalação, higienização profunda, manutenção e adequação completa ao PMOC.
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Serviços</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Instalação de Split</a></li>
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Higienização Química</a></li>
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Manutenção e Recarga de Gás</a></li>
+                        <li><a href="#pmoc" class="hover:text-white transition-colors">Elaboração de PMOC</a></li>
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Venda de Aparelhos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Região de Atendimento</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><i class="fa-solid fa-location-dot text-brand-500 mr-1.5"></i> Alvorada - RS</li>
+                        <li><i class="fa-solid fa-location-dot text-brand-500 mr-1.5"></i> Porto Alegre - RS</li>
+                        <li><i class="fa-solid fa-location-dot text-brand-500 mr-1.5"></i> Viamão - RS</li>
+                        <li><i class="fa-solid fa-location-dot text-brand-500 mr-1.5"></i> Gravataí e Cachoeirinha</li>
+                        <li><i class="fa-solid fa-location-dot text-brand-500 mr-1.5"></i> Região Metropolitana</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Contato Direto</h4>
+                    <p class="text-xs text-slate-400 mb-2">WhatsApp Comercial:</p>
+                    <a href="https://wa.me/5551996184755" target="_blank" class="text-lg font-bold text-green-400 hover:text-green-300 block mb-4">
+                        (51) 99618-4755
+                    </a>
+                    <p class="text-xs text-slate-500">
+                        Segunda a Sábado, das 08h às 18h
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; <span id="year"></span> MR Ar Condicionado. Todos os direitos reservados.</p>
+                <p>Climatização, Higienização, Manutenção e PMOC no RS</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5551996184755?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform pulse-btn">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <div id="service-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl animate-fade-in">
+            <button onclick="closeServiceModal()" class="absolute top-4 right-4 w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-200">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-icon" class="w-12 h-12 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-xl mb-4">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <h3 id="modal-title" class="text-2xl font-bold text-slate-900 mb-2">Detalhes do Serviço</h3>
+            <p id="modal-description" class="text-slate-600 text-sm leading-relaxed mb-6"></p>
+            
+            <a id="modal-whatsapp-link" href="https://wa.me/5551996184755" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Solicitar Orçamento Deste Serviço</span>
+            </a>
+        </div>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
