@@ -229,7 +229,7 @@
                                 `*Mensagem/Bairro:* ${message || 'Não informado'}`;
 
             const encodedText = encodeURIComponent(textMessage);
-            const whatsappUrl = `https://wa.me/5551993624454?text=${encodedText}`;
+            const whatsappUrl = `https://wa.me/5551996184755?text=${encodedText}`;
 
             window.open(whatsappUrl, '_blank');
         }
