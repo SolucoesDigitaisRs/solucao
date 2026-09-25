@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Peça sua pizza artesanal da GO PIZZAS pelo WhatsApp.">
+  <title>GO PIZZAS | Massa fina. Sabor de verdade.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#inicio" aria-label="GO PIZZAS">
+        <img src="assets/logo-go-pizzas.png" alt="GO PIZZAS">
+      </a>
+      <div class="top-actions">
+        <a class="whatsapp-top" href="https://wa.me/5551991040106" target="_blank" rel="noopener">WhatsApp</a>
+        <button class="cart-top" id="openCartBtn" type="button">
+          <span>🛒</span> Meu pedido <b id="cartCount">0</b>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <span class="eyebrow">PIZZAS ARTESANAIS • 35 CM</span>
+          <h1>Mais que pizza,<br><strong>é um bom momento.</strong></h1>
+          <p>Massa fina. Sabor de verdade.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#escolha-sabor">🍕 Fazer meu pedido</a>
+            <a class="btn btn-outline" href="#como-pedir">Como pedir</a>
+          </div>
+          <div class="open-status" id="openStatus"><span></span> Pedidos abertos</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-bar" id="cardapio">
+      <div class="container category-scroll">
+        <button class="category-btn active" data-category="tradicionais">Tradicionais</button>
+        <button class="category-btn" data-category="especiais">Especiais</button>
+        <button class="category-btn" data-category="premium">Premium</button>
+        <button class="category-btn" data-category="doces">Pizzas doces</button>
+        <button class="category-btn" data-category="bebidas">Bebidas</button>
+        <button class="category-btn category-custom-btn" data-category="montar">Monte sua pizza</button>
+      </div>
+    </section>
+
+    <section class="menu-section" id="escolha-sabor">
+      <div class="container">
+        <div class="section-heading">
+          <span>ESCOLHA SEU SABOR</span>
+          <h2 id="categoryTitle">Tradicionais</h2>
+          <p id="categorySubtitle">Pizzas artesanais • 35 cm</p>
+        </div>
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+    </section>
+
+    <section class="how-section" id="como-pedir">
+      <div class="container">
+        <div class="section-heading centered">
+          <span>É FÁCIL PEDIR</span>
+          <h2>Seu pedido em poucos passos</h2>
+        </div>
+        <div class="steps">
+          <div class="step"><strong>01</strong><h3>Escolha</h3><p>Selecione suas pizzas, doces e bebidas.</p></div>
+          <div class="step"><strong>02</strong><h3>Confira</h3><p>Revise seu pedido e informe seus dados.</p></div>
+          <div class="step"><strong>03</strong><h3>Envie</h3><p>O pedido é enviado diretamente para o WhatsApp.</p></div>
+          <div class="step"><strong>04</strong><h3>Receba ou retire</h3><p>Pagamento no momento da entrega ou retirada.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button class="floating-cart" id="floatingCart" type="button">
+    <span>🛒</span>
+    <span>Ver pedido</span>
+    <strong id="floatingTotal">R$ 0,00</strong>
+  </button>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Meu pedido">
+    <div class="drawer-header">
+      <div><span>SEU PEDIDO</span><h2>Meu carrinho</h2></div>
+      <button class="icon-btn" id="closeCartBtn" type="button" aria-label="Fechar">×</button>
+    </div>
+    <div class="cart-content" id="cartContent"></div>
+    <div class="cart-footer">
+      <div class="cart-closed-notice" id="cartClosedNotice" role="status">
+        <span>Não é possível finalizar o pedido. Estabelecimento fechado.</span>
+        <button class="refresh-status-btn" id="refreshStatusBtn" type="button">↻ Atualizar</button>
+      </div>
+      <div class="total-row"><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div>
+      <button class="btn btn-primary full" id="checkoutBtn" type="button">Finalizar pedido</button>
+      <button class="btn btn-danger-outline full" id="clearCartBtn" type="button">Limpar carrinho</button>
+      <button class="btn btn-ghost full" id="continueBtn" type="button">Continuar comprando</button>
+    </div>
+  </aside>
+
+  <div class="modal-backdrop" id="productModalBackdrop"></div>
+  <div class="modal product-modal" id="productModal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="closeProductModal" type="button">×</button>
+    <div id="productModalContent"></div>
+  </div>
+
+  <div class="modal-backdrop" id="clearCartBackdrop"></div>
+  <div class="modal clear-cart-modal" id="clearCartModal" role="dialog" aria-modal="true" aria-labelledby="clearCartTitle">
+    <button class="modal-close" id="closeClearCartModal" type="button" aria-label="Fechar">×</button>
+    <span class="eyebrow">LIMPAR PEDIDO</span>
+    <h2 id="clearCartTitle">Deseja limpar o carrinho?</h2>
+    <p>Todos os itens adicionados serão removidos do seu pedido.</p>
+    <div class="clear-cart-actions">
+      <button class="btn btn-ghost" id="cancelClearCartBtn" type="button">Cancelar</button>
+      <button class="btn btn-danger" id="confirmClearCartBtn" type="button">Limpar carrinho</button>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="customPizzaBackdrop"></div>
+  <div class="modal custom-pizza-modal" id="customPizzaModal" role="dialog" aria-modal="true" aria-labelledby="customPizzaTitle">
+    <button class="modal-close" id="closeCustomPizzaModal" type="button" aria-label="Fechar">×</button>
+    <span class="eyebrow">PIZZA PERSONALIZADA</span>
+    <h2 id="customPizzaTitle">Monte sua pizza</h2>
+    <p class="custom-pizza-intro">Escolha até 4 sabores para montar sua pizza. O valor é fixo em <strong>R$ 72,99</strong>.</p>
+    <div class="custom-pizza-counter"><span>Sabores escolhidos</span><strong><span id="customPizzaCount">0</span>/4</strong></div>
+    <div class="custom-pizza-options" id="customPizzaOptions"></div>
+    <p class="custom-pizza-feedback" id="customPizzaFeedback" aria-live="polite"></p>
+    <button class="btn btn-primary full" id="addCustomPizzaBtn" type="button" disabled>Adicionar ao pedido</button>
+  </div>
+
+  <div class="modal-backdrop" id="checkoutBackdrop"></div>
+  <div class="modal checkout-modal" id="checkoutModal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="closeCheckoutModal" type="button">×</button>
+    <div class="checkout-head">
+      <span>FINALIZAR PEDIDO</span>
+      <h2>Vamos confirmar seus dados</h2>
+      <p>O pagamento será feito na entrega ou no momento da retirada.</p>
+    </div>
+
+    <form id="checkoutForm">
+      <div class="form-section">
+        <h3>1. Como você quer receber?</h3>
+        <div class="choice-grid">
+          <label class="choice-card"><input type="radio" name="orderType" value="delivery" checked><span>🛵</span><b>Entrega  </b><small>Receba no endereço informado</small></label>
+          <label class="choice-card"><input type="radio" name="orderType" value="pickup"><span>🏪</span><b>Retirar no local  </b><small>Rua Murá, 80 • Espírito Santo</small></label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>2. Seus dados</h3>
+        <div class="form-grid">
+          <label>Nome completo<input required name="name" autocomplete="name" placeholder="Seu nome"></label>
+          <label>WhatsApp<input required name="phone" autocomplete="tel" placeholder="(51) 99999-9999"></label>
+        </div>
+      </div>
+
+      <div class="form-section" id="addressSection">
+        <h3>3. Endereço para entrega</h3>
+        <div class="form-grid">
+          <label class="wide">Rua<input name="street" autocomplete="street-address" placeholder="Rua / Avenida"></label>
+          <label>Número<input name="number" placeholder="Nº"></label>
+          <label>Complemento<input name="complement" placeholder="Apto, casa..."></label>
+          <label>Bairro<input name="neighborhood" placeholder="Seu bairro"></label>
+          <label>Cidade<input name="city" placeholder="Sua Cidade"></label>
+          <label>Referência<input name="reference" placeholder="Perto de..."></label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 id="paymentTitle">4. Forma de pagamento</h3>
+        <div class="payment-grid">
+          <label class="payment-card"><input type="radio" name="payment" value="Dinheiro" checked><span>💵</span><b>Dinheiro</b></label>
+          <label class="payment-card"><input type="radio" name="payment" value="Cartão"><span>💳</span><b>Cartão</b></label>
+          <label class="payment-card"><input type="radio" name="payment" value="Pix"><span>📱</span><b>Pix</b></label>
+        </div>
+        <div class="change-field" id="changeField">
+          <label>Precisa de troco para quanto?<input name="change" inputmode="decimal" placeholder="Ex.: R$ 100,00"></label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>5. Observações do pedido</h3>
+        <label><textarea name="generalNote" rows="3" placeholder="Alguma observação para a pizzaria?"></textarea></label>
+      </div>
+
+      <div class="checkout-summary">
+        <div><span>Subtotal</span><strong id="checkoutSubtotal">R$ 0,00</strong></div>
+        <small>Taxa de entrega, se houver, será confirmada pelo estabelecimento.</small>
+      </div>
+
+      <div class="checkout-actions">
+        <button class="btn btn-outline full" id="reviewOrderBtn" type="button">Revisar pedido</button>
+        <button class="btn btn-primary full send-order" type="submit">📲 Enviar pedido pelo WhatsApp</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="modal-backdrop" id="reviewOrderBackdrop"></div>
+  <div class="modal review-order-modal" id="reviewOrderModal" role="dialog" aria-modal="true" aria-labelledby="reviewOrderTitle">
+    <button class="modal-close" id="closeReviewOrderModal" type="button" aria-label="Fechar">×</button>
+    <span class="eyebrow">CONFIRA ANTES DE ENVIAR</span>
+    <h2 id="reviewOrderTitle">Revisar pedido</h2>
+    <div class="review-order-content" id="reviewOrderContent"></div>
+    <div class="review-order-actions">
+      <button class="btn btn-primary full" id="editOrderBtn" type="button">Voltar</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <img src="assets/logo-go-pizzas.png" alt="GO PIZZAS">
+        <p>Massa fina. Sabor de verdade.</p>
+      </div>
+      <div>
+        <strong>GO PIZZAS</strong>
+        <p>Rua Murá, 80 • Espírito Santo<br>Porto Alegre/RS</p>
+      </div>
+      <div>
+        <strong>Pedidos</strong>
+        <p>(51) 99345-3884<br>Pagamento na entrega ou retirada.</p>
+      </div>
+      <div class="business-hours">
+        <strong>Horário de atendimento</strong>
+        <p id="footerBusinessHours">Carregando horário...</p>
+        <p class="footer-status" id="footerStatus"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="year"></span> GO PIZZAS. Todos os direitos reservados.</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
