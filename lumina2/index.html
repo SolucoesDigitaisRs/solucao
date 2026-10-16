@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LÚMINA Personalizados a Laser — produtos personalizados em MDF, acrílico e outros materiais. Gravação e corte a laser para presentes, decoração, eventos, casamentos e brindes corporativos. Transforme sua ideia em uma peça única.">
+  <meta name="theme-color" content="#F8F6F1">
+  <title>Lúmina Personaliza | Personalização, Brindes</title>
+  <link rel="icon" type="image/png" href="assets/logo_lumina500x500.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="topbar" id="topo">
+    <div class="container topbar-inner">
+      <span>📍 Ibarama/RS</span>
+      <span>Personalizados • Brindes • <a class="contact-link" href="https://www.instagram.com/lumin_alaser" target="_blank" rel="noopener">Instagram →</a></span>
+      <a href="#contato">Fale com a Lúmina</a>
+    </div>
+  </div>
+
+  <header class="header" id="inicio">
+    <div class="container nav">
+      <a class="brand" href="#topo" aria-label="Lúmina Personaliza — voltar ao topo">
+        <img class="brand-logo" src="assets/logo_lumina500x500.jpg" alt="Lúmina — Personalizados a Laser">
+        <span><strong>PERSONALIZA</strong><small>IDEIAS QUE VIRAM PRODUTOS</small></span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+      <nav class="nav-links">
+        <a href="#topo">Início</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#empresas">Para empresas</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="#catalogo">Ver catálogo</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">PERSONALIZAÇÃO • BRINDES</span>
+          <h1>Transforme sua ideia em algo <span>único.</span></h1>
+          <p>Produtos personalizados para presentes, empresas, eventos e projetos especiais. Escolha o produto, envie sua ideia e solicite seu orçamento.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#catalogo">Explorar catálogo <span>→</span></a>
+            <a class="btn btn-light" href="#quoteForm">Meu projeto</a>
+          </div>
+          <div class="hero-trust">
+            <div><strong>+ produtos</strong><small>para personalizar</small></div>
+            <div><strong>Ibarama RS</strong><small>atendimento local</small></div>
+            <div><strong>Seu projeto</strong><small>do seu jeito</small></div>
+          </div>
+        </div>
+        <!--<div class="hero-showcase">
+          <div class="hero-card hero-card-main">
+            <div class="hero-placeholder">Lúmina<br><small>PERSONALIZA</small></div>
+            <span class="floating-tag">Sua marca aqui</span>
+          </div>
+          <div class="mini-card mini-one"><span>☕</span><b>Canecas</b><small>Personalizadas</small></div>
+          <div class="mini-card mini-two"><span>👜</span><b>Camisetas</b><small>Com sua arte</small></div>                  
+        </div>
+      </div>-->
+    </section>
+
+    <section class="categories" id="categorias">
+      <div class="container">
+        <div class="section-heading centered">
+          <span class="eyebrow">ENCONTRE O QUE PRECISA</span>
+          <h2>Explore por categoria</h2>
+          <p>Uma forma simples de encontrar produtos para seu presente, empresa ou evento.</p>
+        </div>
+        <div class="category-grid" id="categoryGrid"></div>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="catalogo">
+      <div class="container">
+        <div class="section-heading catalog-heading">
+          <div>
+            <span class="eyebrow">CATÁLOGO Lúmina</span>
+            <h2>Produtos em destaque</h2>
+            <p>Selecione uma categoria ou pesquise pelo produto.</p>
+          </div>
+          <div class="search-box">
+            <span>⌕</span>
+            <input id="searchInput" type="search" placeholder="Buscar produto..." aria-label="Buscar produto">
+          </div>
+        </div>
+        <div class="filter-row" id="filterRow"></div>
+        <div class="product-rows" id="productRows"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <span>🔎</span>
+          <h3>Nenhum produto encontrado</h3>
+          <p>Tente outra palavra ou categoria.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="business-section" id="empresas">
+      <div class="container business-grid">
+        <div class="business-visual">
+          <div class="business-tile tile-large">SUA<br><span>MARCA</span></div>
+          <div class="business-tile tile-small">BRINDES<br> Personalizados</div>
+        </div>
+        <div class="business-copy">
+          <span class="eyebrow">SOLUÇÕES PARA EMPRESAS</span>
+          <h2>Sua marca também pode ser personalizada.</h2>
+          <p>Do nome gravado em uma lembrança ao presente completo para uma ocasião especial. Cada peça pode receber nome, frase, data, logotipo ou arte personalizada.</p>
+          <div class="check-list">
+            <div><span>✓</span> Brindes corporativos</div>
+            <div><span>✓</span> Chaveiros personalizados</div>
+            <div><span>✓</span> Caixas e lembranças</div>
+            <div><span>✓</span> Decoração</div>
+            <div><span>✓</span> Casamentos e eventos</div>
+            <div><span>✓</span> Acrílico personalizado</div>
+          </div>
+          <a class="btn btn-primary" href="#quoteForm">Falar sobre meu projeto →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps-section">
+      <div class="container">
+        <div class="section-heading centered">
+          <span class="eyebrow">É SIMPLES</span>
+          <h2>Do seu jeito, do começo ao fim</h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step"><span>01</span><h3>Escolha</h3><p>Encontre o produto que combina com sua ideia.</p></div>
+          <div class="step"><span>02</span><h3>Envie sua ideia</h3><p>Conte o que precisa e envie sua arte ou logotipo.</p></div>
+          <div class="step"><span>03</span><h3>Receba o orçamento</h3><p>A Lúmina avalia quantidade, material e personalização.</p></div>
+          <div class="step"><span>04</span><h3>Produção</h3><p>Após a aprovação, seu pedido entra em produção.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="sobre">
+      <div class="container about-grid">
+        <div>
+          <span class="eyebrow">SOBRE A Lúmina</span>
+          <h2>Personalização com significado.</h2>
+          <p>A LÚMINA nasceu para transformar ideias simples em peças especiais. Trabalhamos com gravação e corte a laser para criar produtos personalizados para pessoas, famílias, empresas e eventos.</p>
+          <p>Cada projeto é pensado para ter identidade própria — porque uma peça personalizada deve ser diferente de qualquer outra.</p>
+        </div>
+        <div class="about-facts">
+          <div><strong>Ibarama</strong><span>RS</span></div>
+          <div><strong>Atendimento</strong><span>Segunda a sábado</span></div>
+          <div><strong>Orçamento</strong><span>Direto pelo WhatsApp</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contato">
+      <div class="container contact-card">
+        <div>
+          <span class="eyebrow">VAMOS CRIAR?</span>
+          <h2>Conte o que você precisa.</h2>
+          <p>Envie seu produto, quantidade e ideia. A Lúmina Personaliza pode orientar você sobre as opções disponíveis.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-whatsapp" href="#" data-whatsapp-general>💬 Solicitar orçamento</a>
+          <a class="contact-link" href="https://www.instagram.com/lumin_alaser" target="_blank" rel="noopener">Instagram →</a>
+        </div>
+        
+      </div>
+      
+      <div class="container quote-form-wrap" >
+        <form class="quote-form" id="quoteForm">
+          <div class="quote-form-heading"><p></p><span class="eyebrow">PROJETO PERSONALIZADO</span><h2>Solicite seu orçamento</h2><p>Conte para nós o que você imagina. Vamos transformar sua ideia em uma peça personalizada.</p></div>
+          <fieldset class="quote-group"><legend>01 <span>Sobre o seu projeto</span></legend><div class="quote-fields">
+            <label class="quote-field">Objetivo do pedido <em>*</em><select name="objetivo" required><option value="">Selecione uma opção</option><option>Presente personalizado</option><option>Decoração</option><option>Casamento / evento</option><option>Brinde corporativo</option><option>Chaveiro</option><option>Caixa personalizada</option><option>Placa / identificação</option><option>Outro</option></select></label>
+            <label class="quote-field">Material<select name="material"><option value="">Selecione se já souber</option><option>MDF</option><option>Acrílico</option><option>Madeira</option><option>Metal</option><option>Alumínio</option><option>Outro</option><option>Não sei — preciso de orientação</option></select></label></div></fieldset>
+          <fieldset class="quote-group"><legend>02 <span>Detalhes do produto</span></legend><div class="quote-fields">
+            <label class="quote-field quote-field-full">O que você deseja personalizar? <em>*</em><textarea name="descricao" rows="4" required placeholder="Descreva sua ideia. Ex.: Quero uma caixa com o nome Maria, uma frase e a data 15/12/2026."></textarea></label>
+            <label class="quote-field">Quantidade <em>*</em><input name="quantidade" type="number" min="1" step="1" required placeholder="Ex.: 10"></label><label class="quote-field">Tamanho aproximado<input name="tamanho" type="text" placeholder="Ex.: 20 x 15 cm"></label>
+            <label class="quote-field">Prazo<select name="prazo" id="quoteDeadline"><option value="">Selecione uma opção</option><option>Sem urgência</option><option>Até 7 dias</option><option>Até 15 dias</option><option value="data-especifica">Tenho uma data específica</option></select></label>
+            <label class="quote-field" id="quoteDateField" hidden>Data desejada <em>*</em><input name="dataEspecifica" id="quoteDate" type="date"></label></div></fieldset>
+          <fieldset class="quote-group"><legend>03 <span>Personalização</span></legend><div class="quote-fields">
+            <label class="quote-field">Arte / logotipo<select name="arte"><option value="">Selecione uma opção</option><option>Já possuo a arte</option><option>Não possuo a arte</option><option>Preciso de ajuda para criar</option></select></label>
+            <label class="quote-field quote-field-full">Referência<textarea name="referencia" rows="3" placeholder="Se tiver uma referência, conte aqui como gostaria que ficasse."></textarea></label></div></fieldset>
+          <fieldset class="quote-group"><legend>04 <span>Seus dados</span></legend><div class="quote-fields">
+            <label class="quote-field">Nome do cliente <em>*</em><input name="nome" type="text" autocomplete="name" required placeholder="Seu nome"></label><label class="quote-field">WhatsApp <em>*</em><input name="telefone" id="quotePhone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(00) 00000-0000" maxlength="15"></label></div></fieldset>
+          <fieldset class="quote-group quote-address"><legend>05 <span>Endereço para entrega</span></legend><p class="quote-group-note">Opcional — você pode preencher depois, se preferir.</p><button class="quote-address-toggle" id="quoteAddressToggle" type="button" aria-expanded="false" aria-controls="quoteAddressFields">＋ Informar endereço</button><div class="quote-address-fields" id="quoteAddressFields" hidden><div class="quote-fields">
+            <label class="quote-field">CEP<input name="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000"></label><label class="quote-field quote-field-wide">Rua / Avenida<input name="rua" autocomplete="address-line1" placeholder="Rua ou avenida"></label>
+            <label class="quote-field">Número<input name="numero" autocomplete="address-line2" placeholder="Nº"></label><label class="quote-field">Complemento<input name="complemento" placeholder="Apto, bloco, referência"></label><label class="quote-field">Bairro<input name="bairro" autocomplete="address-level3"></label>
+            <label class="quote-field">Cidade<input name="cidade" autocomplete="address-level2"></label><label class="quote-field">Estado / UF<input name="estado" autocomplete="address-level1" maxlength="2" placeholder="RS"></label></div></div></fieldset>
+          <fieldset class="quote-group quote-notes"><legend>06 <span>Observações</span></legend><label class="quote-field">Informações adicionais<textarea name="observacoes" rows="4" placeholder="Alguma informação adicional que devemos saber?"></textarea></label></fieldset>
+          <div class="quote-submit-row"><p><em>*</em> Campos obrigatórios</p><button class="btn btn-whatsapp" type="submit">Solicitar orçamento pelo WhatsApp <span aria-hidden="true">→</span></button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#topo" aria-label="Lúmina Personaliza — voltar ao topo">
+          <img class="brand-logo" src="assets/logo_lumina500x500.jpg" alt="Lúmina — Personalizados a Laser">
+          <span><strong>PERSONALIZA</strong><small>IDEIAS QUE VIRAM PRODUTOS</small></span>
+        </a>
+        <p>Personalizados e brindes em Ibarama/RS.</p>
+      </div>
+      <div><h4>Navegação</h4><a href="#catalogo">Catálogo</a><a href="#empresas">Para empresas</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></div>
+      <div><h4>Contato</h4><p>Ibarama / RS<br></p><a href="tel:+5551980438920">(51) 98043-8920</a></div>
+      <div><h4>Horários</h4><p>Segunda a sexta<br>10h às 18h</p><p>Sábado<br>10h às 14h</p></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> Lúmina Personaliza. Todos os direitos reservados.</span><span>Site desenvolvido para apresentação comercial.</span></div>
+  </footer>
+
+  <a class="floating-whatsapp" href="#" data-whatsapp-general aria-label="Fale com a Lúmina pelo WhatsApp">
+    <span class="may-bubble">Fale com a Lúmina <span class="may-sparkle" aria-hidden="true">✦</span></span>
+    <svg class="may-mascot" viewBox="0 0 120 132" role="img" aria-label="May, mascote da Lúmina">
+      <defs><linearGradient id="may-face" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF0A8"/><stop offset="1" stop-color="#FFFDF5"/></linearGradient><linearGradient id="may-apron" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#26A66A"/><stop offset="1" stop-color="#087B4B"/></linearGradient></defs>
+      <path class="may-hair" d="M29 39C25 21 38 12 49 18c5-12 23-12 29 0 14-5 25 7 20 22l-9 9H34z"/>
+      <path class="may-body" d="M34 88c6-7 16-11 26-11s20 4 26 11l11 34H23z"/>
+      <path class="may-apron" d="M43 85h34l10 35H33z"/>
+      <circle cx="60" cy="101" r="5" fill="#FFFDF5"/>
+      <ellipse cx="60" cy="55" rx="38" ry="40" fill="url(#may-face)" stroke="#E9C97E" stroke-width="2"/>
+      <path class="may-lock" d="M31 34c4-11 12-16 21-15-2 7-6 12-12 16l-8 8zM89 34c-4-11-12-16-21-15 2 7 6 12 12 16l8 8z"/>
+      <ellipse cx="47" cy="54" rx="5" ry="7" class="may-eye"/><ellipse cx="73" cy="54" rx="5" ry="7" class="may-eye"/>
+      <circle cx="45.5" cy="51.5" r="1.7" class="may-eye-shine"/><circle cx="71.5" cy="51.5" r="1.7" class="may-eye-shine"/>
+      <ellipse cx="38" cy="66" rx="6" ry="3.2" class="may-blush"/><ellipse cx="82" cy="66" rx="6" ry="3.2" class="may-blush"/>
+      <path d="M52 66q8 9 16 0" fill="none" stroke="#332B24" stroke-width="2.6" stroke-linecap="round"/>
+    </svg>
+  </a>
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" data-close-modal aria-label="Fechar">×</button>
+      <div class="modal-image" id="modalImage"></div>
+      <div class="modal-info">
+        <span class="product-category" id="modalCategory"></span>
+        <h2 id="modalTitle"></h2>
+        <p class="modal-price" id="modalPrice"></p>
+        <p id="modalDescription"></p>
+        <ul id="modalFeatures"></ul>
+        <a class="btn btn-whatsapp" id="modalWhatsapp" href="#">Fazer pedido</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/produtos.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/protecao.js"></script>
+</body>
+</html>
