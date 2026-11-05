@@ -1,4 +1,4 @@
-const WHATSAPP = "5551996184755";
+const WHATSAPP = "5551980438920";
 const categorias = [
   {nome:"Todos",icone:"✨",descricao:"Ver tudo"},
   {nome:"Brindes",icone:"🎁",descricao:"Presentes e ações"},
