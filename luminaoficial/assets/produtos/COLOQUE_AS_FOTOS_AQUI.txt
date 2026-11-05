@@ -1,0 +1,1 @@
+Substitua pelos arquivos JPG/PNG indicados em js/produtos.js.
