@@ -9,7 +9,7 @@ const produtos = [
     imagem:"assets/produtos/copo_termico_lumina.jpg"},
     
   {id:2,
-    preco:0,
+    preco:20.00,
     nome:"🪵 Placa Decorativa em Madeira Personalizada – Árvore da Família",
     categoria:"Brindes",
     icone:"🥤",
@@ -42,7 +42,7 @@ const produtos = [
     icone:"👜",
     descricao:"Todas as cores disponíveis para campanhas, empresas, eventos e presentes.",
     recursos:["Personalização conforme projeto","Ideal para ações promocionais","Consulte tamanho e modelos disponíveis"],
-    imagem:"assets/produtos/vestuario/lumina1.jpg"},
+    imagem:"assets/produtos/vestuario/lumina.jpg"},
 
   {
     id:6,
@@ -380,7 +380,7 @@ const produtos = [
   },
 
   {id:41,
-    preco:65.00,
+    preco:120.00,
     nome:"Caixas personalizadas (madeira e MDF)",
     categoria:"MDF & Laser",
     icone:"📦",
