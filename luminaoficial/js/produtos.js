@@ -56,7 +56,7 @@ const produtos = [
       "Personalização opcional conforme projeto",
       "Para pedidos corporativos acima de 10 un - consultar valores"
     ],
-    imagem: "assets/produtos/Papelaria/caderno3.jpg"
+    imagem: "assets/produtos/papelaria/caderno3.jpg"
   },
 
   {id:7,
