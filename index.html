@@ -18,11 +18,8 @@
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
       <a href="#inicio" class="brand" aria-label="Solução Digital RS - início">
-        <span class="brand-mark"><span></span><span></span><span></span></span>
-        <span>
-          <strong>Solução Digital</strong>
-          <small>RS</small>
-        </span>
+        <img class="brand-logo" src="assets/logo_solucao_digital.png" alt="Solução Digital RS">
+        <span class="brand-name"><strong>Solução Digital</strong><small>RS</small></span>
       </a>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
@@ -71,11 +68,11 @@
 
         <div class="hero-visual reveal delay-2" aria-label="Ilustração de soluções digitais">
           <div class="visual-glow"></div>
-          <div class="floating-card card-site">
-            <span class="mini-icon">⌁</span>
-            <div><b>Seu site</b><small>profissional</small></div>
-            <span class="status-dot"></span>
-          </div>
+          <a class="floating-card card-site app-shortcut" href="https://play.google.com/store/apps/details?id=com.evandro.servicospro" target="_blank" rel="noopener noreferrer" aria-label="Baixar Serviços Pro na Google Play">
+            <span class="mini-icon">▣</span>
+            <div><b>Serviços Pro</b><small>Baixe no Google Play</small></div>
+            <span class="arrow-mini">↗</span>
+          </a>
 
           <div class="visual-core">
             <div class="core-ring ring-one"></div>
@@ -87,11 +84,11 @@
             </div>
           </div>
 
-          <div class="floating-card card-app">
-            <span class="mini-icon">▣</span>
-            <div><b>Aplicativo</b><small>sob medida</small></div>
+          <a class="floating-card card-app app-shortcut" href="https://play.google.com/store/apps/details?id=com.ecdigitalapps.meudia" target="_blank" rel="noopener noreferrer" aria-label="Baixar Meu Dia na Google Play">
+            <span class="mini-icon">✓</span>
+            <div><b>Meu Dia</b><small>Baixe no Google Play</small></div>
             <span class="arrow-mini">↗</span>
-          </div>
+          </a>
 
           <div class="floating-card card-data">
             <span class="mini-bars"><i></i><i></i><i></i><i></i></span>
@@ -223,6 +220,39 @@
       </div>
     </section>
 
+    <section class="app-promo section" aria-labelledby="appPromoTitle">
+      <div class="container app-promo-list">
+       <article class="app-promo-card reveal" aria-labelledby="servicosProTitle">
+        <div class="app-icon-placeholder">
+          <img src="assets/servicos-pro-icon.webp" alt="Ícone do aplicativo Serviços Pro" width="88" height="88">
+        </div>
+        <div class="app-promo-copy">
+          <div class="section-kicker">DISPONÍVEL PARA ANDROID</div>
+          <h2 id="servicosProTitle">Conheça o <span>Serviços Pro</span></h2>
+          <p>Tenha o Serviços Pro no seu celular. Baixe agora pela Google Play.</p>
+        </div>
+        <a class="google-play-button" href="https://play.google.com/store/apps/details?id=com.evandro.servicospro" target="_blank" rel="noopener noreferrer" aria-label="Baixar Serviços Pro na Google Play">
+          <svg class="google-play-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.2 2.6c-.3.3-.5.8-.5 1.5v15.8c0 .7.2 1.2.5 1.5L12 12 3.2 2.6Z"/><path fill="#4285F4" d="m12 12 4.2 4.5 4.7-2.7c1.2-.7 1.2-1.8 0-2.5l-4.7-2.7L12 12Z"/><path fill="#FBBC04" d="m3.2 2.6 11.1 6.4L12 12 3.2 2.6Z"/><path fill="#EA4335" d="M3.2 21.4 14.3 15 12 12l-8.8 9.4Z"/></svg>
+          <span><small>BAIXE NA</small><strong>Google Play</strong></span>
+        </a>
+       </article>
+       <article class="app-promo-card reveal delay-1" aria-labelledby="meuDiaTitle">
+        <div class="app-icon-placeholder">
+          <img src="assets/meu-dia-icon.webp" alt="Ícone do aplicativo Meu Dia" width="88" height="88">
+        </div>
+        <div class="app-promo-copy">
+          <div class="section-kicker">DISPONÍVEL PARA ANDROID</div>
+          <h2 id="meuDiaTitle">Conheça o <span>Meu Dia</span></h2>
+          <p>Organize seu dia a dia com o Meu Dia. Baixe agora pela Google Play.</p>
+        </div>
+        <a class="google-play-button" href="https://play.google.com/store/apps/details?id=com.ecdigitalapps.meudia" target="_blank" rel="noopener noreferrer" aria-label="Baixar Meu Dia na Google Play">
+          <svg class="google-play-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.2 2.6c-.3.3-.5.8-.5 1.5v15.8c0 .7.2 1.2.5 1.5L12 12 3.2 2.6Z"/><path fill="#4285F4" d="m12 12 4.2 4.5 4.7-2.7c1.2-.7 1.2-1.8 0-2.5l-4.7-2.7L12 12Z"/><path fill="#FBBC04" d="m3.2 2.6 11.1 6.4L12 12 3.2 2.6Z"/><path fill="#EA4335" d="M3.2 21.4 14.3 15 12 12l-8.8 9.4Z"/></svg>
+          <span><small>BAIXE NA</small><strong>Google Play</strong></span>
+        </a>
+       </article>
+      </div>
+    </section>
+
     <section class="statement section">
       <div class="statement-orb"></div>
       <div class="container statement-inner reveal">
@@ -250,6 +280,7 @@
         <div class="projects-showcase">
           <article class="project-card project-main reveal">
             <div class="project-art app-art">
+              <img class="project-image" src="assets" alt="Tela do aplicativo ServiçosPRO" loading="lazy">
               <div class="app-window">
                 <div class="window-top"><i></i><i></i><i></i></div>
                 <div class="app-dashboard">
@@ -267,6 +298,7 @@
 
           <article class="project-card reveal delay-1">
             <div class="project-art finance-art">
+              <img class="project-image" src="assets/projetos/meu-dia.jpg" alt="Tela do aplicativo Meu Dia" loading="lazy">
               <div class="finance-screen">
                 <span>Meu Dia</span>
                 <strong>R$ 4.280,00</strong>
@@ -281,6 +313,7 @@
 
           <article class="project-card reveal delay-2">
             <div class="project-art web-art">
+              <img class="project-image" src="assets/projetos/sites-comerciais.jpg" alt="Exemplo de site comercial desenvolvido" loading="lazy">
               <div class="browser-screen">
                 <div class="browser-nav"></div>
                 <div class="browser-hero"></div>
@@ -294,7 +327,8 @@
           </article>
 
           <article class="project-card reveal">
-            <div class="project-art pizza-art">              
+            <div class="project-art pizza-art">
+              <img class="project-image" src="assets/projetos/cardapio-pizzaria.jpg" alt="Exemplo de cardápio online para pizzaria" loading="lazy">
               <div class="pizza-circle">🍕</div>
               <span>MENU<br>ONLINE</span>
             </div>
@@ -306,6 +340,7 @@
 
           <article class="project-card reveal delay-1">
             <div class="project-art barber-art">
+              <img class="project-image" src="assets/projetos/sistema-barbearia.jpg" alt="Tela do sistema de agendamento para barbearia" loading="lazy">
               <div class="barber-card">
                 <small>AGENDA</small>
                 <strong>14:30</strong>
@@ -392,8 +427,8 @@
     <div class="container footer-main">
       <div class="footer-brand">
         <a href="#inicio" class="brand">
-          <span class="brand-mark"><span></span><span></span><span></span></span>
-          <span><strong>Solução Digital</strong><small>RS</small></span>
+          <img class="brand-logo" src="assets/logo_solucao_digital.png" alt="Solução Digital RS">
+          <span class="brand-name"><strong>Solução Digital</strong><small>RS</small></span>
         </a>
         <p>Tecnologia, desenvolvimento e soluções digitais para transformar ideias em realidade.</p>
       </div>

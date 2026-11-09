@@ -4,6 +4,13 @@ const mainNav = document.getElementById("mainNav");
 const scrollProgress = document.getElementById("scrollProgress");
 const backTop = document.getElementById("backTop");
 
+document.querySelectorAll(".project-image").forEach(image => {
+  const art = image.closest(".project-art");
+  image.addEventListener("load", () => art.classList.add("has-image"), { once: true });
+  image.addEventListener("error", () => image.remove(), { once: true });
+  if (image.complete && image.naturalWidth) art.classList.add("has-image");
+});
+
 function updateScrollUI() {
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
