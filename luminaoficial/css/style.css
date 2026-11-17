@@ -230,7 +230,17 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #B38A
 .product-carousel-arrow:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
 @media(max-width:1000px){.product-grid .product-card{flex-basis:calc((100% - 40px)/3)}}
 @media(max-width:760px){.product-grid{gap:12px;touch-action:auto}.product-grid .product-card{flex-basis:calc((100% - 12px)/2)}.product-image{height:170px}.product-body{padding:14px}.product-body p{font-size:12px}.product-carousel-arrow{display:none}}
-@media(max-width:450px){.product-grid .product-card{flex-basis:100%}}
+@media(max-width:450px){
+  .product-grid{gap:12px}
+  .product-grid .product-card{flex-basis:min(76vw,270px)}
+  .product-image{height:145px}
+  .product-body{padding:12px}
+  .product-body h3{font-size:15px;margin:5px 0}
+  .product-body p{font-size:11px;line-height:1.45;min-height:32px}
+  .product-footer{gap:8px;margin-top:10px}
+  .product-footer button{padding:7px 9px;font-size:11px;white-space:nowrap}
+  .product-price{font-size:12px}
+}
 
 
 .quote-address-toggle{display:inline-flex;align-items:center;gap:7px;border:1px solid #D8CBAE;border-radius:999px;background:#FBF8F0;color:#76591F;padding:8px 13px;font:600 12px "DM Sans",sans-serif;cursor:pointer;transition:background .18s,border-color .18s}
