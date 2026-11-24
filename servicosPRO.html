@@ -3,302 +3,517 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ServiçosPRO: gestão profissional de clientes, serviços, agenda e financeiro, mesmo sem internet.">
 <title>ServiçosPRO - Gestão Profissional de Serviços</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+:root {
+    --black: #0b0b0f;
+    --surface: #111117;
+    --card: #181821;
+    --gold: #ffb300;
+    --gold-light: #ffc107;
+    --text: #ffffff;
+    --muted: #cfcfcf;
+    --line: rgba(255, 179, 0, .16);
 }
 
-body{
-    background:#0b0b0f;
-    color:#fff;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:40px;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.hero {
+    min-height: 760px;
+    display: flex;
+    align-items: center;
+    padding: 72px 6vw;
+    position: relative;
+    overflow: hidden;
     background:
-    radial-gradient(circle at top,#2a2a2a 0%,#0b0b0f 60%);
+        radial-gradient(circle at 77% 38%, rgba(255, 179, 0, .14), transparent 28%),
+        radial-gradient(circle at 15% 0%, #2a2a2a 0%, var(--black) 52%);
 }
 
-.container{
-    max-width:1200px;
-    width:100%;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
+.hero::after {
+    content: '';
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgba(255, 193, 7, .13);
+    border-radius: 50%;
+    position: absolute;
+    right: -170px;
+    top: -190px;
 }
 
-.logo{
-    width:120px;
-    border-radius:25px;
-    box-shadow:0 0 35px rgba(255,193,7,.4);
+.hero-mobile {
+    display: none;
 }
 
-.badge{
-    display:inline-block;
-    background:rgba(255,193,7,.15);
-    color:#ffb300;
-    padding:8px 18px;
-    border-radius:30px;
-    margin-bottom:20px;
-    font-weight:600;
+.container {
+    max-width: 1180px;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
+    gap: clamp(40px, 7vw, 100px);
+    align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
-h1{
-    font-size:58px;
-    line-height:1.1;
-    margin-bottom:20px;
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
 }
 
-.highlight{
-    color:#ffb300;
+.eyebrow::before {
+    content: '';
+    width: 30px;
+    height: 2px;
+    background: var(--gold);
 }
 
-p{
-    font-size:18px;
-    color:#cfcfcf;
-    line-height:1.7;
-    margin-bottom:30px;
+.hero h1 {
+    max-width: 680px;
+    font-size: clamp(42px, 5.2vw, 72px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
 }
 
-.buttons{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
+.highlight {
+    color: var(--gold);
 }
 
-.btn{
-    text-decoration:none;
-    padding:16px 30px;
-    border-radius:12px;
-    font-weight:700;
-    transition:.3s;
+.hero-copy {
+    max-width: 590px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 34px;
 }
 
-.btn-primary{
-    background:#ffb300;
-    color:#000;
+.buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
 }
 
-.btn-primary:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 30px rgba(255,179,0,.4);
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
 }
 
-.btn-secondary{
-    border:2px solid #ffb300;
-    color:#ffb300;
+.btn-primary {
+    background: var(--gold);
+    color: #000;
+    box-shadow: 0 10px 25px rgba(255, 179, 0, .18);
 }
 
-.btn-secondary:hover{
-    background:#ffb300;
-    color:#000;
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 34px rgba(255, 179, 0, .38);
 }
 
-.mockup{
-    text-align:center;
+.btn-secondary {
+    border: 1px solid rgba(255, 179, 0, .7);
+    color: var(--gold);
 }
 
-.phone{
-    max-width:350px;
-    width:100%;
-    border-radius:30px;
-    box-shadow:0 0 60px rgba(255,179,0,.25);
+.btn-secondary:hover {
+    background: var(--gold);
+    color: #000;
+    transform: translateY(-3px);
 }
 
-.features{
-    padding:80px 20px;
-    background:#111117;
+.hero-proof {
+    display: flex;
+    gap: 28px;
+    margin-top: 34px;
+    color: #a8a8b0;
+    font-size: 12px;
 }
 
-.features h2{
-    text-align:center;
-    font-size:42px;
-    margin-bottom:50px;
+.hero-proof strong {
+    display: block;
+    color: var(--text);
+    font-size: 15px;
+    margin-bottom: 2px;
 }
 
-.grid{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+.mockup {
+    text-align: center;
+    position: relative;
 }
 
-.card{
-    background:#181821;
-    padding:30px;
-    border-radius:20px;
-    border:1px solid rgba(255,179,0,.15);
+.mockup::before {
+    content: '';
+    position: absolute;
+    width: 82%;
+    height: 82%;
+    left: 9%;
+    top: 10%;
+    border-radius: 50%;
+    background: rgba(255, 179, 0, .13);
+    filter: blur(34px);
+    z-index: -1;
 }
 
-.card h3{
-    color:#ffb300;
-    margin-bottom:10px;
+.phone {
+    width: min(100%, 390px);
+    margin: auto;
+    border: 7px solid #202027;
+    border-radius: 38px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .55), 0 0 45px rgba(255, 179, 0, .2);
 }
 
-.cta{
-    text-align:center;
-    padding:100px 20px;
+.features {
+    padding: 96px 6vw;
+    background: var(--surface);
 }
 
-.cta h2{
-    font-size:48px;
-    margin-bottom:20px;
+.section-heading {
+    max-width: 650px;
+    margin: 0 auto 48px;
+    text-align: center;
 }
 
-footer{
-    text-align:center;
-    padding:30px;
-    color:#888;
-    border-top:1px solid #222;
+.section-heading .eyebrow {
+    margin-bottom: 14px;
 }
 
-@media(max-width:900px){
-
-.container{
-    grid-template-columns:1fr;
-    text-align:center;
+.section-heading h2,
+.cta h2 {
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.15;
+    letter-spacing: -1px;
 }
 
-.buttons{
-    justify-content:center;
+.section-heading p {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-top: 14px;
 }
 
-h1{
-    font-size:42px;
+.grid {
+    max-width: 1180px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
 }
 
+.card {
+    min-height: 190px;
+    padding: 27px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--card);
+    transition: transform .25s ease, border-color .25s ease;
+}
+
+.card:hover {
+    border-color: rgba(255, 179, 0, .55);
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    display: inline-flex;
+    width: 43px;
+    height: 43px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 179, 0, .12);
+    font-size: 21px;
+    margin-bottom: 17px;
+}
+
+.card h3 {
+    color: var(--gold);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #aeadb7;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.cta {
+    padding: 110px 20px;
+    text-align: center;
+    background: radial-gradient(circle at 50% 0%, rgba(255, 179, 0, .1), transparent 38%);
+}
+
+.cta p {
+    max-width: 520px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 16px auto 30px;
+}
+
+footer {
+    padding: 26px 20px;
+    border-top: 1px solid #222;
+    color: #777;
+    font-size: 12px;
+    text-align: center;
+}
+
+@media (max-width: 850px) {
+    .hero-desktop {
+        display: none;
+    }
+
+    .hero-mobile {
+        min-height: 720px;
+        display: block;
+        padding: 44px 22px 60px;
+        text-align: center;
+        background:
+            radial-gradient(circle at 50% 0%, rgba(255, 179, 0, .19), transparent 38%),
+            var(--black);
+    }
+
+    .hero-mobile::after {
+        display: none;
+    }
+
+    .hero-mobile .container {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .hero-mobile .eyebrow {
+        margin-bottom: 18px;
+    }
+
+    .hero-mobile h1 {
+        font-size: clamp(36px, 11vw, 52px);
+        letter-spacing: -1.5px;
+        margin-bottom: 17px;
+    }
+
+    .hero-mobile .hero-copy {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 24px;
+    }
+
+    .hero-mobile .buttons {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-mobile .btn {
+        width: 100%;
+    }
+
+    .hero-mobile .hero-proof {
+        justify-content: center;
+        gap: 20px;
+        margin-top: 24px;
+    }
+
+    .hero-mobile .mockup {
+        order: -1;
+        margin: 0 auto 30px;
+    }
+
+    .hero-mobile .phone {
+        width: min(68vw, 265px);
+        border-radius: 28px;
+        border-width: 5px;
+    }
+
+    .features {
+        padding: 72px 20px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .card {
+        min-height: 175px;
+        padding: 21px;
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-height: auto;
+    }
+
+    .cta {
+        padding: 80px 20px;
+    }
 }
 </style>
-
 </head>
 <body>
 
-<section class="hero">
+<section class="hero hero-desktop" aria-label="Apresentação do ServiçosPRO">
+    <div class="container">
+        <div>
+            <span class="eyebrow">Gestão profissional offline</span>
+            <h1>Mais controle para o seu negócio. <span class="highlight">Mais tempo para crescer.</span></h1>
+            <p class="hero-copy">Cadastre clientes, organize atendimentos, controle receitas e despesas e gere relatórios em um só lugar. O ServiçosPRO funciona mesmo sem internet.</p>
+            <div class="buttons">
+                <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.evandro.servicospro" target="_blank" rel="noopener">📲 Baixar na Play Store</a>
+                <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.evandro.servicospro" target="_blank" rel="noopener">⭐ Ver avaliações</a>
+            </div>
+            <div class="hero-proof">
+                <span><strong>Funciona offline</strong>Trabalhe de qualquer lugar</span>
+                <span><strong>Tudo em um só app</strong>Gestão simples e completa</span>
+            </div>
+        </div>
+        <div class="mockup">
+            <img class="phone" src="img play/bannerPro..jpg" alt="Tela do aplicativo ServiçosPRO">
+        </div>
+    </div>
+</section>
 
-<div class="container">
-
-<div>
-
-<div class="badge">
-Gestão Profissional Offline
-</div>
-
-<h1>
-Controle seus serviços com o
-<span class="highlight">ServiçosPRO</span>
-</h1>
-
-<p>
-Cadastre clientes, organize atendimentos, controle receitas e despesas,
-gere relatórios e mantenha tudo funcionando mesmo sem internet.
-Uma solução completa para técnicos, instaladores, autônomos e prestadores de serviços.
-</p>
-
-<div class="buttons">
-
-<a class="btn btn-primary"
-href="https://play.google.com/store/apps/details?id=com.evandro.servicospro"
-target="_blank">
-📲 Baixar na Play Store
-</a>
-
-<a class="btn btn-secondary"
-href="https://play.google.com/store/apps/details?id=com.evandro.servicospro"
-target="_blank">
-⭐ Ver Avaliações
-</a>
-
-</div>
-
-</div>
-
-<div class="mockup">
-
-<img class="phone"
-src="cabecalhoPro.JPG"
-alt="ServiçosPRO">
-
-</div>
-
-</div>
-
+<section class="hero hero-mobile" aria-label="Apresentação do ServiçosPRO para celular">
+    <div class="container">
+        <div class="mockup">
+            <img class="phone" src="img play/bannerPro..jpg" alt="Tela do aplicativo ServiçosPRO">
+        </div>
+        <div>
+            <span class="eyebrow">Gestão sem complicação</span>
+            <h1>Seu serviço organizado. <span class="highlight">Seu negócio avançando.</span></h1>
+            <p class="hero-copy">Tenha clientes, agenda, serviços e financeiro sempre à mão, mesmo sem internet.</p>
+            <div class="buttons">
+                <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.evandro.servicospro" target="_blank" rel="noopener">📲 Baixar agora</a>
+                <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.evandro.servicospro" target="_blank" rel="noopener">⭐ Ver avaliações</a>
+            </div>
+            <div class="hero-proof">
+                <span><strong>Offline</strong>Em qualquer lugar</span>
+                <span><strong>Completo</strong>Em um só app</span>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="features">
-
-<h2>Por que escolher o ServiçosPRO?</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>👥 Clientes</h3>
-<p>Cadastre e gerencie todos os seus clientes em um só lugar.</p>
-</div>
-
-<div class="card">
-<h3>🔧 Serviços</h3>
-<p>Controle ordens de serviço e histórico de atendimentos.</p>
-</div>
-
-<div class="card">
-<h3>📅 Agenda</h3>
-<p>Organize compromissos e nunca perca um atendimento.</p>
-</div>
-
-<div class="card">
-<h3>💰 Financeiro</h3>
-<p>Acompanhe receitas, despesas e resultados do mês.</p>
-</div>
-
-<div class="card">
-<h3>📊 Relatórios</h3>
-<p>Visualize informações importantes para tomar decisões.</p>
-</div>
-
-<div class="card">
-<h3>📴 Offline</h3>
-<p>Funciona sem internet, ideal para trabalhar em qualquer lugar.</p>
-</div>
-
-</div>
-
+    <div class="section-heading">
+        <span class="eyebrow">Tudo sob controle</span>
+        <h2>Uma gestão mais simples, todos os dias</h2>
+        <p>Ferramentas essenciais para você trabalhar melhor e tomar decisões com segurança.</p>
+    </div>
+    <div class="grid">
+        <article class="card">
+            <span class="card-icon">👥</span>
+            <h3>Clientes</h3>
+            <p>Cadastre e gerencie todos os seus clientes em um só lugar.</p>
+        </article>
+        <article class="card">
+            <span class="card-icon">🔧</span>
+            <h3>Serviços</h3>
+            <p>Controle ordens de serviço e acompanhe todo o histórico.</p>
+        </article>
+        <article class="card">
+            <span class="card-icon">📅</span>
+            <h3>Agenda</h3>
+            <p>Organize seus compromissos e nunca perca um atendimento.</p>
+        </article>
+        <article class="card">
+            <span class="card-icon">💰</span>
+            <h3>Financeiro</h3>
+            <p>Acompanhe receitas, despesas e os resultados do seu mês.</p>
+        </article>
+        <article class="card">
+            <span class="card-icon">📊</span>
+            <h3>Relatórios</h3>
+            <p>Visualize informações importantes para decidir melhor.</p>
+        </article>
+        <article class="card">
+            <span class="card-icon">📴</span>
+            <h3>Offline</h3>
+            <p>Continue trabalhando mesmo quando não houver internet.</p>
+        </article>
+    </div>
 </section>
 
 <section class="cta">
-
-<h2>Comece agora mesmo</h2>
-
-<p>
-Transforme a gestão do seu negócio com uma ferramenta simples,
-rápida e profissional.
-</p>
-
-<br>
-
-<a class="btn btn-primary"
-href="https://play.google.com/store/apps/details?id=com.evandro.servicospro"
-target="_blank">
-🚀 Instalar ServiçosPRO
-</a>
-
+    <h2>Pronto para trabalhar melhor?</h2>
+    <p>Transforme a rotina do seu negócio com uma ferramenta simples, rápida e profissional.</p>
+    <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.evandro.servicospro" target="_blank" rel="noopener">🚀 Instalar ServiçosPRO</a>
 </section>
 
-<footer>
-© 2026 ServiçosPRO - Todos os direitos reservados.
-</footer>
+<footer>© 2026 ServiçosPRO - Todos os direitos reservados.</footer>
 
+<script>
+(() => {
+    const preventAction = (event) => event.preventDefault();
+
+    document.addEventListener('contextmenu', preventAction);
+    document.addEventListener('selectstart', preventAction);
+    document.addEventListener('dragstart', preventAction);
+    document.addEventListener('copy', preventAction);
+    document.addEventListener('cut', preventAction);
+
+    document.addEventListener('keydown', (event) => {
+        const key = event.key.toLowerCase();
+        const blockedShortcut =
+            event.key === 'F12' ||
+            (event.ctrlKey && event.shiftKey && ['i', 'j', 'c'].includes(key)) ||
+            (event.ctrlKey && key === 'u');
+
+        if (blockedShortcut) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+    });
+})();
+</script>
 </body>
 </html>
